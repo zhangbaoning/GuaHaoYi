@@ -11,6 +11,18 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <form action="register.action" method="get">
+    <%--customer.setCname(cname);--%>
+    <%--customer.setCpassword(cpassword);--%>
+    <%--customer.setCcard(ccard);--%>
+    <%--customer.setCsex(csex);--%>
+    <%--customer.setCtel(ctel);--%>
+    <input type="text" name="name">
+    <input type="text" name="password">
+    <input type="text" name="card">
+    <input type="number" name="sex">
+    <input type="number" name="tel">
+    <input type="submit">
+  </form>
   </body>
 </html>

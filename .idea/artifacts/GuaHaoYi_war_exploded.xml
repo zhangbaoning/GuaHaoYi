@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="GuaHaoYi" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="required" />
+          <element id="library" level="project" name="minilib" />
+        </element>
       </element>
     </root>
   </artifact>

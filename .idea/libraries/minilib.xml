@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="minilib">
+    <CLASSES>
+      <root url="file://D:/java/struts-2.5.5/minilib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/java/struts-2.5.5/minilib" recursive="false" />
+  </library>
+</component>

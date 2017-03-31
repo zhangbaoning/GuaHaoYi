@@ -11,13 +11,31 @@ public class Customer {
     private String ccard;
     private Date cbirth;
     private Integer ctel;
-    private String caddress;
+    private String caddress = "陕西省";
     private short csex;
     private String cpassword;
     private Byte register = 0;
     private int cage;
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "cid=" + cid +
+                ", cname='" + cname + '\'' +
+                ", ccard='" + ccard + '\'' +
+                ", cbirth=" + cbirth +
+                ", ctel=" + ctel +
+                ", caddress='" + caddress + '\'' +
+                ", csex=" + csex +
+                ", cpassword='" + cpassword + '\'' +
+                ", register=" + register +
+                ", cage=" + cage +
+                '}';
+    }
+
     public int getCage() {
+        //TODO 删掉打印
+        System.out.println(ccard);
         String ageStirng = ccard.substring(6, 10);
         //日期表示的年份减去 1900。
         cage = new java.util.Date().getYear() + 1900 - Integer.parseInt(ageStirng);
@@ -53,10 +71,16 @@ public class Customer {
     }
 
     public Date getCbirth() {
+        String ageStirng = ccard.substring(6, 14);
+        int year = Integer.parseInt(ageStirng.substring(0, 4));
+        int month = Integer.parseInt(ageStirng.substring(4, 6));
+        int day = Integer.parseInt(ageStirng.substring(6, 8));
+        this.cbirth = new Date(year, month, day);
         return cbirth;
     }
 
     public void setCbirth(Date cbirth) {
+
         this.cbirth = cbirth;
     }
 
@@ -133,4 +157,5 @@ public class Customer {
         result = 31 * result + (register != null ? register.hashCode() : 0);
         return result;
     }
+
 }

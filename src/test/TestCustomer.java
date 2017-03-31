@@ -45,4 +45,11 @@ public class TestCustomer {
         System.out.println(customer.getCage());
 
     }
+
+    @Test
+    public void birth() {
+        Customer customer = new TestCustomer().get(3);
+        System.out.println(customer.getCbirth());
+
+    }
 }
