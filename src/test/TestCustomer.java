@@ -38,4 +38,11 @@ public class TestCustomer {
         CustomerDao dao = new CustomerDaoImpl();
         dao.del(customer);
     }
+
+    @Test
+    public void age() {
+        Customer customer = new TestCustomer().get(3);
+        System.out.println(customer.getCage());
+
+    }
 }

@@ -14,7 +14,19 @@ public class Customer {
     private String caddress;
     private short csex;
     private String cpassword;
-    private Byte register;
+    private Byte register = 0;
+    private int cage;
+
+    public int getCage() {
+        String ageStirng = ccard.substring(6, 10);
+        //日期表示的年份减去 1900。
+        cage = new java.util.Date().getYear() + 1900 - Integer.parseInt(ageStirng);
+        return cage;
+    }
+
+    public void setCage(int cage) {
+        this.cage = cage;
+    }
 
     public int getCid() {
         return cid;
