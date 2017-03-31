@@ -1,6 +1,8 @@
 package entity;
 
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by zhangbaoning on 2017/3/31.
@@ -15,6 +17,15 @@ public class Doctor {
     private String dtitle;
     private Integer dtotal;
     private Integer dfree;
+    private Set set = new HashSet();
+
+    public Set getSet() {
+        return set;
+    }
+
+    public void setSet(Set set) {
+        this.set = set;
+    }
 
     public int getDid() {
         return did;

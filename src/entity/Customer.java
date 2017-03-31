@@ -16,6 +16,15 @@ public class Customer {
     private String cpassword;
     private Byte register = 0;
     private int cage;
+    private Doctor doctor;
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
 
     @Override
     public String toString() {

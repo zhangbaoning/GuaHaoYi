@@ -32,5 +32,9 @@
         <property name="dfree">
             <column name="dfree" sql-type="int(10)" not-null="true"/>
         </property>
+        <set name="set">
+            <key column="cdoctor"></key>
+            <one-to-many class="entity.Customer"/>
+        </set>
     </class>
 </hibernate-mapping>

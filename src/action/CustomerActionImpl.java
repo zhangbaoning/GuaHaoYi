@@ -3,7 +3,10 @@ package action;
 import com.opensymphony.xwork2.ActionSupport;
 import dao.CustomerDao;
 import dao.CustomerDaoImpl;
+import dao.DoctorDao;
+import dao.DoctorDaoImpl;
 import entity.Customer;
+import entity.Doctor;
 
 import java.sql.Date;
 import java.util.Iterator;
@@ -102,7 +105,7 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
         int year = Integer.parseInt(ageStirng.substring(0, 4));
         int month = Integer.parseInt(ageStirng.substring(4, 6));
         int day = Integer.parseInt(ageStirng.substring(6, 8));
-     /* @param year the year minus 1900; must be 0 to 8099.
+        /** @param year the year minus 1900; must be 0 to 8099.
         (Note that 8099 is 9999 minus 1900.)
       * @param month 0 to 11
       */
@@ -115,7 +118,13 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
     }
 
     @Override
-    public String order() {
+    public String order(int did) {
+        //TODO 未测试
+        /**
+         *在界面上获得了医生的对象，通过一对多的方法，将患者添加到医生的Set上面
+         */
+        DoctorDao doctorDao = new DoctorDaoImpl();
+        Doctor doctor = doctorDao.get(did);
         return null;
     }
 

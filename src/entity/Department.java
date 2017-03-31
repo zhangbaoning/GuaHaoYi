@@ -1,5 +1,8 @@
 package entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by zhangbaoning on 2017/3/31.
  */
@@ -7,6 +10,7 @@ public class Department {
     private int pid;
     private String pname;
     private Integer phospital;
+
 
     public int getPid() {
         return pid;

@@ -46,7 +46,7 @@
     </column>
     <column id="24" parent="15" name="ctel">
       <Position>7</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(11)|0</DataType>
     </column>
     <column id="25" parent="15" name="caddress">
       <Position>8</Position>
@@ -54,7 +54,7 @@
     </column>
     <column id="26" parent="15" name="csex">
       <Position>4</Position>
-      <DataType>smallint(1)|0</DataType>
+      <DataType>varchar(2)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="27" parent="15" name="cdoctor">
@@ -135,7 +135,7 @@ ccard</ColNames>
     </column>
     <column id="43" parent="17" name="dtel">
       <Position>6</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(11)|0</DataType>
     </column>
     <column id="44" parent="17" name="dtitle">
       <Position>7</Position>
