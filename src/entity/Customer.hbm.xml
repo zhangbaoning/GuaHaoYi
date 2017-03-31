@@ -12,7 +12,7 @@
             <column name="cname" sql-type="varchar(255)"/>
         </property>
         <property name="ccard">
-            <column name="ccard" sql-type="int(18) unsigned"/>
+            <column name="ccard" sql-type="varchar(18)" length="18"/>
         </property>
         <property name="cbirth">
             <column name="cbirth" sql-type="date"/>
@@ -25,6 +25,12 @@
         </property>
         <property name="csex">
             <column name="csex" sql-type="smallint(1)"/>
+        </property>
+        <property name="cpassword">
+            <column name="cpassword" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="register">
+            <column name="register" sql-type="tinyint(4)" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

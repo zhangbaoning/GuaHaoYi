@@ -17,7 +17,8 @@ public class TestCustomer {
         customer.setCname("张宝宁");
         customer.setCsex((short) 1);
         customer.setCtel(1550918156);
-        //customer.setCcard(610321199405263136);
+        customer.setCpassword("123456");
+        customer.setCcard("610321199405263136");
         customer.setCaddress("sdkdk");
         customer.setCbirth(new Date(2001,1,2));
         CustomerDao dao = new CustomerDaoImpl();
@@ -27,13 +28,13 @@ public class TestCustomer {
     public Customer get(int id){
         //Customer customer = new Customer();
         CustomerDao dao = new CustomerDaoImpl();
-        Customer customer = dao.get(1);
+        Customer customer = dao.get(id);
         System.out.println(customer.toString());
         return customer;
     }
     @Test
     public void del(){
-        Customer customer = new TestCustomer().get(1);
+        Customer customer = new TestCustomer().get(2);
         CustomerDao dao = new CustomerDaoImpl();
         dao.del(customer);
     }

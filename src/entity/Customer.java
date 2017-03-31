@@ -3,10 +3,18 @@ package entity;
 import java.sql.Date;
 
 /**
- * Created by zhangbaoning on 2017/3/30.
+ * Created by zhangbaoning on 2017/3/31.
  */
 public class Customer {
     private int cid;
+    private String cname;
+    private String ccard;
+    private Date cbirth;
+    private Integer ctel;
+    private String caddress;
+    private short csex;
+    private String cpassword;
+    private Byte register;
 
     public int getCid() {
         return cid;
@@ -16,8 +24,6 @@ public class Customer {
         this.cid = cid;
     }
 
-    private String cname;
-
     public String getCname() {
         return cname;
     }
@@ -26,17 +32,13 @@ public class Customer {
         this.cname = cname;
     }
 
-    private int ccard;
-
-    public int getCcard() {
+    public String getCcard() {
         return ccard;
     }
 
-    public void setCcard(int ccard) {
+    public void setCcard(String ccard) {
         this.ccard = ccard;
     }
-
-    private Date cbirth;
 
     public Date getCbirth() {
         return cbirth;
@@ -46,8 +48,6 @@ public class Customer {
         this.cbirth = cbirth;
     }
 
-    private Integer ctel;
-
     public Integer getCtel() {
         return ctel;
     }
@@ -55,8 +55,6 @@ public class Customer {
     public void setCtel(Integer ctel) {
         this.ctel = ctel;
     }
-
-    private String caddress;
 
     public String getCaddress() {
         return caddress;
@@ -66,14 +64,28 @@ public class Customer {
         this.caddress = caddress;
     }
 
-    private short csex;
-
     public short getCsex() {
         return csex;
     }
 
     public void setCsex(short csex) {
         this.csex = csex;
+    }
+
+    public String getCpassword() {
+        return cpassword;
+    }
+
+    public void setCpassword(String cpassword) {
+        this.cpassword = cpassword;
+    }
+
+    public Byte getRegister() {
+        return register;
+    }
+
+    public void setRegister(Byte register) {
+        this.register = register;
     }
 
     @Override
@@ -84,12 +96,14 @@ public class Customer {
         Customer customer = (Customer) o;
 
         if (cid != customer.cid) return false;
-        if (ccard != customer.ccard) return false;
         if (csex != customer.csex) return false;
         if (cname != null ? !cname.equals(customer.cname) : customer.cname != null) return false;
+        if (ccard != null ? !ccard.equals(customer.ccard) : customer.ccard != null) return false;
         if (cbirth != null ? !cbirth.equals(customer.cbirth) : customer.cbirth != null) return false;
         if (ctel != null ? !ctel.equals(customer.ctel) : customer.ctel != null) return false;
         if (caddress != null ? !caddress.equals(customer.caddress) : customer.caddress != null) return false;
+        if (cpassword != null ? !cpassword.equals(customer.cpassword) : customer.cpassword != null) return false;
+        if (register != null ? !register.equals(customer.register) : customer.register != null) return false;
 
         return true;
     }
@@ -98,24 +112,13 @@ public class Customer {
     public int hashCode() {
         int result = cid;
         result = 31 * result + (cname != null ? cname.hashCode() : 0);
-        result = 31 * result + ccard;
+        result = 31 * result + (ccard != null ? ccard.hashCode() : 0);
         result = 31 * result + (cbirth != null ? cbirth.hashCode() : 0);
         result = 31 * result + (ctel != null ? ctel.hashCode() : 0);
         result = 31 * result + (caddress != null ? caddress.hashCode() : 0);
         result = 31 * result + (int) csex;
+        result = 31 * result + (cpassword != null ? cpassword.hashCode() : 0);
+        result = 31 * result + (register != null ? register.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "cid=" + cid +
-                ", cname='" + cname + '\'' +
-                ", ccard=" + ccard +
-                ", cbirth=" + cbirth +
-                ", ctel=" + ctel +
-                ", caddress='" + caddress + '\'' +
-                ", csex=" + csex +
-                '}';
     }
 }
