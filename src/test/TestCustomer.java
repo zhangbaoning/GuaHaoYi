@@ -1,11 +1,14 @@
 package test;
 
+import action.CustomerAction;
+import action.CustomerActionImpl;
 import dao.CustomerDao;
 import dao.CustomerDaoImpl;
 import entity.Customer;
 import org.junit.Test;
 
 import java.sql.Date;
+import java.util.Iterator;
 
 /**
  * Created by zhangbaoning on 2017/3/30.
@@ -51,5 +54,15 @@ public class TestCustomer {
         Customer customer = new TestCustomer().get(3);
         System.out.println(customer.getCbirth());
 
+    }
+
+    @Test
+    public void byName() {
+        CustomerDao dao = new CustomerDaoImpl();
+        Iterator it = dao.getByCard("610321199405263136").iterator();
+        while (it.hasNext()) {
+            Customer customer = (Customer) it.next();
+            System.out.println(customer.toString());
+        }
     }
 }

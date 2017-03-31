@@ -5,6 +5,9 @@ import dao.CustomerDao;
 import dao.CustomerDaoImpl;
 import entity.Customer;
 
+import java.util.Iterator;
+import java.util.List;
+
 
 /**
  * Created by zhangbaoning on 2017/3/31.
@@ -58,6 +61,23 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
         this.sex = sex;
     }
 
+    @Override
+    public String login() {
+        CustomerDao dao = new CustomerDaoImpl();
+        List list = dao.getByCard(card);
+        Customer customer = null;
+        if (!list.isEmpty()) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                customer = (Customer) it.next();
+            }
+            System.out.println(customer.getCpassword() + " " + password);
+            if (customer.getCpassword().equals(password)) {
+                return LOGIN;
+            }
+        }
+        return ERROR;
+    }
 
     @Override
     public String register() {

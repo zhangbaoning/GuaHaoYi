@@ -10,7 +10,9 @@
         <action name="register" class="action.CustomerActionImpl" method="register">
             <result name="input">/Sucess.jsp</result>
         </action>
-
+        <action name="login" class="action.CustomerActionImpl" method="login">
+            <result name="login">/Sucess.jsp</result>
+        </action>
     </package>
 
 </struts>
