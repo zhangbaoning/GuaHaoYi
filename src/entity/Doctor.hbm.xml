@@ -4,4 +4,33 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
+    <class name="entity.Doctor" table="doctor" schema="ghy">
+        <id name="did">
+            <column name="did" sql-type="int(10) unsigned"/>
+        </id>
+        <property name="dname">
+            <column name="dname" sql-type="varchar(255)"/>
+        </property>
+        <property name="dsex">
+            <column name="dsex" sql-type="smallint(1)"/>
+        </property>
+        <property name="dcard">
+            <column name="dcard" sql-type="int(18) unsigned"/>
+        </property>
+        <property name="dbirth">
+            <column name="dbirth" sql-type="date"/>
+        </property>
+        <property name="dtel">
+            <column name="dtel" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="dtitle">
+            <column name="dtitle" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="dtotal">
+            <column name="dtotal" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="dfree">
+            <column name="dfree" sql-type="int(10)" not-null="true"/>
+        </property>
+    </class>
 </hibernate-mapping>

@@ -20,7 +20,7 @@
     <input type="text" name="name">
     <input type="text" name="password">
     <input type="text" name="card">
-    <input type="number" name="sex">
+    <input type="text" name="sex">
     <input type="number" name="tel">
     <input type="submit">
   </form>

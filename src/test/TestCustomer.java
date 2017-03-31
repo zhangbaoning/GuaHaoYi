@@ -18,8 +18,8 @@ public class TestCustomer {
     public void add(){
         Customer customer = new Customer();
         customer.setCname("张宝宁");
-        customer.setCsex((short) 1);
-        customer.setCtel(1550918156);
+        customer.setCsex("男");
+        customer.setCtel("1550918156");
         customer.setCpassword("123456");
         customer.setCcard("610321199405263136");
         customer.setCaddress("sdkdk");

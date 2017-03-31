@@ -19,116 +19,207 @@
     <schema id="13" parent="1" name="warehouse"/>
     <schema id="14" parent="1" name="wordpress"/>
     <table id="15" parent="2" name="customer"/>
-    <table id="16" parent="2" name="doctor"/>
-    <column id="17" parent="15" name="cid">
+    <table id="16" parent="2" name="department"/>
+    <table id="17" parent="2" name="doctor"/>
+    <table id="18" parent="2" name="hospital"/>
+    <table id="19" parent="2" name="ph"/>
+    <column id="20" parent="15" name="cid">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="18" parent="15" name="cname">
+    <column id="21" parent="15" name="cname">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="15" name="ccard">
+    <column id="22" parent="15" name="ccard">
       <Position>5</Position>
       <DataType>varchar(18)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="15" name="cbirth">
+    <column id="23" parent="15" name="cbirth">
       <Position>6</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="15" name="ctel">
+    <column id="24" parent="15" name="ctel">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="22" parent="15" name="caddress">
+    <column id="25" parent="15" name="caddress">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="23" parent="15" name="csex">
+    <column id="26" parent="15" name="csex">
       <Position>4</Position>
       <DataType>smallint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="15" name="cdoctor">
+    <column id="27" parent="15" name="cdoctor">
       <Position>9</Position>
       <DataType>int(10) unsigned|0</DataType>
     </column>
-    <column id="25" parent="15" name="cpassword">
+    <column id="28" parent="15" name="cpassword">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="15" name="register">
+    <column id="29" parent="15" name="register">
       <Position>10</Position>
       <DataType>tinyint(4)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <index id="27" parent="15" name="doctor">
+    <index id="30" parent="15" name="doctor">
       <ColNames>cdoctor</ColNames>
     </index>
-    <key id="28" parent="15" name="PRIMARY">
+    <key id="31" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>cid</ColNames>
+      <ColNames>cid
+ccard</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="29" parent="15" name="doctor">
+    <foreign-key id="32" parent="15" name="doctor">
       <ColNames>cdoctor</ColNames>
       <RefSchemaName>ghy</RefSchemaName>
       <RefTableName>doctor</RefTableName>
       <RefColNames>did</RefColNames>
     </foreign-key>
-    <column id="30" parent="16" name="did">
+    <column id="33" parent="16" name="pid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="16" name="pname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="35" parent="16" name="phospital">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="36" parent="16" name="hospital">
+      <ColNames>phospital</ColNames>
+    </index>
+    <key id="37" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="17" name="did">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="31" parent="16" name="dname">
+    <column id="39" parent="17" name="dname">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="16" name="dsex">
+    <column id="40" parent="17" name="dsex">
       <Position>3</Position>
       <DataType>smallint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="33" parent="16" name="dcard">
+    <column id="41" parent="17" name="dcard">
       <Position>4</Position>
       <DataType>int(18) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="16" name="dbirth">
+    <column id="42" parent="17" name="dbirth">
       <Position>5</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="16" name="dtel">
+    <column id="43" parent="17" name="dtel">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="36" parent="16" name="dtitle">
+    <column id="44" parent="17" name="dtitle">
       <Position>7</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="37" parent="16" name="cdoctor">
+    <column id="45" parent="17" name="ddepart">
       <Position>8</Position>
-      <DataType>int(10) unsigned|0</DataType>
-    </column>
-    <column id="38" parent="16" name="cdepart">
-      <Position>9</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="39" parent="16" name="PRIMARY">
+    <column id="46" parent="17" name="dtotal">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="47" parent="17" name="dfree">
+      <Position>10</Position>
+      <DataType>int(10)|0</DataType>
+    </column>
+    <index id="48" parent="17" name="depart">
+      <ColNames>ddepart</ColNames>
+    </index>
+    <key id="49" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>did</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="50" parent="17" name="depart">
+      <ColNames>ddepart</ColNames>
+      <RefSchemaName>ghy</RefSchemaName>
+      <RefTableName>department</RefTableName>
+      <RefColNames>pid</RefColNames>
+    </foreign-key>
+    <column id="51" parent="18" name="hid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="18" name="hname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="53" parent="18" name="haddress">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="54" parent="18" name="htel">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="55" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>hid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="56" parent="19" name="pid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="19" name="hid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="58" parent="19" name="hostpital">
+      <ColNames>hid</ColNames>
+    </index>
+    <key id="59" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid
+hid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="60" parent="19" name="partment">
+      <ColNames>pid</ColNames>
+      <RefSchemaName>ghy</RefSchemaName>
+      <RefTableName>department</RefTableName>
+      <RefColNames>pid</RefColNames>
+    </foreign-key>
+    <foreign-key id="61" parent="19" name="hostpital">
+      <ColNames>hid</ColNames>
+      <RefSchemaName>ghy</RefSchemaName>
+      <RefTableName>hospital</RefTableName>
+      <RefColNames>hid</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

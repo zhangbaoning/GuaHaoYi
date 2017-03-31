@@ -5,6 +5,7 @@ import dao.CustomerDao;
 import dao.CustomerDaoImpl;
 import entity.Customer;
 
+import java.sql.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,9 +18,9 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
 
     String name;
     String password;
-    int tel;
+    String tel;
     String card;
-    short sex;
+    String sex;
 
     public String getName() {
         return name;
@@ -37,11 +38,11 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
         this.password = password;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 
@@ -53,11 +54,11 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
         this.card = card;
     }
 
-    public short getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(short sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
@@ -84,9 +85,9 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
 
 
         /*
-        注册必须输入姓名、身份证号、性别、密码、电话号码
-        电话号码可更新
-        地址可随后设置
+        *注册必须输入姓名、身份证号、性别、密码、电话号码
+        *电话号码可更新
+        *地址可随后设置
         * */
         System.out.println("正在运行");
         Customer customer = new Customer();
@@ -96,7 +97,17 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
         customer.setCsex(sex);
         customer.setCtel(tel);
         customer.setCage(customer.getCage());
-
+        //设置生日
+        String ageStirng = card.substring(6, 14);
+        int year = Integer.parseInt(ageStirng.substring(0, 4));
+        int month = Integer.parseInt(ageStirng.substring(4, 6));
+        int day = Integer.parseInt(ageStirng.substring(6, 8));
+     /* @param year the year minus 1900; must be 0 to 8099.
+        (Note that 8099 is 9999 minus 1900.)
+      * @param month 0 to 11
+      */
+        customer.setCbirth(new Date(year - 1900, month - 1, day));
+        System.out.println(year + " " + month + " " + day);
         CustomerDao dao = new CustomerDaoImpl();
         System.out.println(customer.toString());
         dao.save(customer);

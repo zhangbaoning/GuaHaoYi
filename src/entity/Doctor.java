@@ -3,7 +3,7 @@ package entity;
 import java.sql.Date;
 
 /**
- * Created by zhangbaoning on 2017/3/30.
+ * Created by zhangbaoning on 2017/3/31.
  */
 public class Doctor {
     private int did;
@@ -13,7 +13,8 @@ public class Doctor {
     private Date dbirth;
     private Integer dtel;
     private String dtitle;
-    private Integer cdepart;
+    private Integer dtotal;
+    private Integer dfree;
 
     public int getDid() {
         return did;
@@ -71,12 +72,20 @@ public class Doctor {
         this.dtitle = dtitle;
     }
 
-    public Integer getCdepart() {
-        return cdepart;
+    public Integer getDtotal() {
+        return dtotal;
     }
 
-    public void setCdepart(Integer cdepart) {
-        this.cdepart = cdepart;
+    public void setDtotal(Integer dtotal) {
+        this.dtotal = dtotal;
+    }
+
+    public Integer getDfree() {
+        return dfree;
+    }
+
+    public void setDfree(Integer dfree) {
+        this.dfree = dfree;
     }
 
     @Override
@@ -93,7 +102,8 @@ public class Doctor {
         if (dbirth != null ? !dbirth.equals(doctor.dbirth) : doctor.dbirth != null) return false;
         if (dtel != null ? !dtel.equals(doctor.dtel) : doctor.dtel != null) return false;
         if (dtitle != null ? !dtitle.equals(doctor.dtitle) : doctor.dtitle != null) return false;
-        if (cdepart != null ? !cdepart.equals(doctor.cdepart) : doctor.cdepart != null) return false;
+        if (dtotal != null ? !dtotal.equals(doctor.dtotal) : doctor.dtotal != null) return false;
+        if (dfree != null ? !dfree.equals(doctor.dfree) : doctor.dfree != null) return false;
 
         return true;
     }
@@ -107,7 +117,8 @@ public class Doctor {
         result = 31 * result + (dbirth != null ? dbirth.hashCode() : 0);
         result = 31 * result + (dtel != null ? dtel.hashCode() : 0);
         result = 31 * result + (dtitle != null ? dtitle.hashCode() : 0);
-        result = 31 * result + (cdepart != null ? cdepart.hashCode() : 0);
+        result = 31 * result + (dtotal != null ? dtotal.hashCode() : 0);
+        result = 31 * result + (dfree != null ? dfree.hashCode() : 0);
         return result;
     }
 }

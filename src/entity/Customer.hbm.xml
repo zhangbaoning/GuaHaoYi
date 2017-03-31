@@ -18,13 +18,13 @@
             <column name="cbirth" sql-type="date"/>
         </property>
         <property name="ctel">
-            <column name="ctel" sql-type="int(11)" not-null="true"/>
+            <column name="ctel" sql-type="varchar(11)" not-null="true"/>
         </property>
         <property name="caddress">
             <column name="caddress" sql-type="varchar(255)" not-null="true"/>
         </property>
         <property name="csex">
-            <column name="csex" sql-type="smallint(1)"/>
+            <column name="csex" sql-type="varchar(2)"/>
         </property>
         <property name="cpassword">
             <column name="cpassword" sql-type="varchar(10)" length="10"/>

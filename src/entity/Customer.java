@@ -10,9 +10,9 @@ public class Customer {
     private String cname;
     private String ccard;
     private Date cbirth;
-    private Integer ctel;
+    private String ctel;
     private String caddress = "陕西省";
-    private short csex;
+    private String csex;
     private String cpassword;
     private Byte register = 0;
     private int cage;
@@ -35,8 +35,10 @@ public class Customer {
 
     public int getCage() {
         //TODO 删掉打印
-        System.out.println(ccard);
+
         String ageStirng = ccard.substring(6, 10);
+        System.out.println(ageStirng);
+        System.out.println(new java.util.Date().getYear());
         //日期表示的年份减去 1900。
         cage = new java.util.Date().getYear() + 1900 - Integer.parseInt(ageStirng);
         return cage;
@@ -71,11 +73,6 @@ public class Customer {
     }
 
     public Date getCbirth() {
-        String ageStirng = ccard.substring(6, 14);
-        int year = Integer.parseInt(ageStirng.substring(0, 4));
-        int month = Integer.parseInt(ageStirng.substring(4, 6));
-        int day = Integer.parseInt(ageStirng.substring(6, 8));
-        this.cbirth = new Date(year, month, day);
         return cbirth;
     }
 
@@ -84,11 +81,11 @@ public class Customer {
         this.cbirth = cbirth;
     }
 
-    public Integer getCtel() {
+    public String getCtel() {
         return ctel;
     }
 
-    public void setCtel(Integer ctel) {
+    public void setCtel(String ctel) {
         this.ctel = ctel;
     }
 
@@ -100,11 +97,11 @@ public class Customer {
         this.caddress = caddress;
     }
 
-    public short getCsex() {
+    public String getCsex() {
         return csex;
     }
 
-    public void setCsex(short csex) {
+    public void setCsex(String csex) {
         this.csex = csex;
     }
 
@@ -152,7 +149,7 @@ public class Customer {
         result = 31 * result + (cbirth != null ? cbirth.hashCode() : 0);
         result = 31 * result + (ctel != null ? ctel.hashCode() : 0);
         result = 31 * result + (caddress != null ? caddress.hashCode() : 0);
-        result = 31 * result + (int) csex;
+        result = 31 * result + (csex != null ? caddress.hashCode() : 0);
         result = 31 * result + (cpassword != null ? cpassword.hashCode() : 0);
         result = 31 * result + (register != null ? register.hashCode() : 0);
         return result;
