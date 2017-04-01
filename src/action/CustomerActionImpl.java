@@ -24,6 +24,15 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
     String tel;
     String card;
     String sex;
+    String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public String getName() {
         return name;
@@ -118,18 +127,32 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
     }
 
     @Override
-    public String order(int did) {
+    /**
+     * @param 输入医生的id和患者的id，获得对象后进行挂号
+     */
+    public String order(int did, int cid) {
         //TODO 未测试
         /**
          *在界面上获得了医生的对象，通过一对多的方法，将患者添加到医生的Set上面
          */
         DoctorDao doctorDao = new DoctorDaoImpl();
         Doctor doctor = doctorDao.get(did);
-        return null;
+        CustomerDao customerDao = new CustomerDaoImpl();
+        Customer customer = customerDao.get(cid);
+        doctor.getSet().add(customer);
+        doctorDao.save(doctor);
+        return SUCCESS;
     }
 
     @Override
     public String infoUpdate() {
-        return null;
+        //密码、地址、和电话可以修改
+        Customer customer = new Customer();
+        customer.setCpassword(password);
+        customer.setCaddress(address);
+        customer.setCtel(tel);
+        CustomerDao dao = new CustomerDaoImpl();
+        dao.save(customer);
+        return SUCCESS;
     }
 }
