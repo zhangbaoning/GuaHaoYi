@@ -139,9 +139,16 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
         Doctor doctor = doctorDao.get(did);
         CustomerDao customerDao = new CustomerDaoImpl();
         Customer customer = customerDao.get(cid);
-        doctor.getSet().add(customer);
-        doctorDao.save(doctor);
-        return SUCCESS;
+        int free = doctor.getDfree() - 1;
+        if (free > 0) {    //医生的排号没挂完
+            if (customer.getDoctor() != null) { //患者没有挂号
+                doctor.setDfree(free);
+                doctor.getSet().add(customer);
+                doctorDao.save(doctor);
+                return SUCCESS;
+            }
+        }
+        return ERROR;
     }
 
     @Override
