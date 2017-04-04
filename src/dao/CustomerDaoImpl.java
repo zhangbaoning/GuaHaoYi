@@ -17,6 +17,8 @@ public class CustomerDaoImpl implements CustomerDao {
         Transaction transaction = session.beginTransaction();
         session.save(customer);
         transaction.commit();
+
+        session.close();
     }
 
     @Override
@@ -24,6 +26,7 @@ public class CustomerDaoImpl implements CustomerDao {
         Transaction transaction = session.beginTransaction();
         session.delete(customer);
         transaction.commit();
+        session.close();
     }
 
     @Override
@@ -31,6 +34,7 @@ public class CustomerDaoImpl implements CustomerDao {
         Transaction transaction = session.beginTransaction();
         session.update(customer);
         transaction.commit();
+        session.close();
     }
 
     @Override
@@ -38,6 +42,7 @@ public class CustomerDaoImpl implements CustomerDao {
         Transaction transaction = session.beginTransaction();
         Customer customer = session.get(Customer.class,cid);
         transaction.commit();
+        session.close();
         return customer;
     }
 
@@ -46,7 +51,7 @@ public class CustomerDaoImpl implements CustomerDao {
         String hql = "from Customer where ccard = ?";
         Query query = session.createQuery(hql);
         List list = query.setString(0, ccard).list();
-
+        session.close();
         return list;
     }
 }

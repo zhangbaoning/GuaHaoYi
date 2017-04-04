@@ -19,6 +19,7 @@ public class DoctorDaoImpl implements DoctorDao {
         Transaction transaction = session.beginTransaction();
         session.save(doctor);
         transaction.commit();
+        session.close();
     }
 
     @Override
@@ -26,6 +27,7 @@ public class DoctorDaoImpl implements DoctorDao {
         Transaction transaction = session.beginTransaction();
         session.delete(doctor);
         transaction.commit();
+        session.close();
     }
 
     @Override
@@ -33,6 +35,7 @@ public class DoctorDaoImpl implements DoctorDao {
         Transaction transaction = session.beginTransaction();
         session.update(doctor);
         transaction.commit();
+        session.close();
     }
 
     @Override
@@ -40,6 +43,7 @@ public class DoctorDaoImpl implements DoctorDao {
         Transaction transaction = session.beginTransaction();
         Doctor doctor = session.get(Doctor.class, cid);
         transaction.commit();
+        session.close();
         return doctor;
     }
 
