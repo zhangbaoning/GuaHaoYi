@@ -12,6 +12,7 @@
         </action>
         <action name="login" class="action.CustomerActionImpl" method="login">
             <result name="login">/Sucess.jsp</result>
+            <result name="error">/index.jsp</result>
         </action>
     </package>
 

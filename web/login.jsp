@@ -13,9 +13,9 @@
 <body>
 <form action="login.action" method="post">
     <span>身份证</span>
-    <input name="card" type="text">
+    <input name="ccard" type="text">
     <span>密码</span>
-    <input name="password" type="password">
+    <input name="cpassword" type="password">
     <input type="submit">
 </form>
 </body>

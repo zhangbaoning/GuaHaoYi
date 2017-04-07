@@ -1,6 +1,7 @@
 package action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import dao.CustomerDao;
 import dao.CustomerDaoImpl;
 import dao.DoctorDao;
@@ -15,77 +16,31 @@ import java.util.List;
 
 /**
  * Created by zhangbaoning on 2017/3/31.
+ * 此命名方式中从表单得到的对象为customerget
+ * 从数据库中得到为customer
  */
-public class CustomerActionImpl extends ActionSupport implements CustomerAction {
-    //TODO 以后改成Model
+public class CustomerActionImpl extends ActionSupport implements CustomerAction, ModelDriven {
+    private Customer customerget = new Customer();
 
-    String name;
-    String password;
-    String tel;
-    String card;
-    String sex;
-    String address;
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
-
-    public String getCard() {
-        return card;
-    }
-
-    public void setCard(String card) {
-        this.card = card;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
+    @Override
+    public Customer getModel() {
+        return customerget;
     }
 
     @Override
     public String login() {
         CustomerDao dao = new CustomerDaoImpl();
-        List list = dao.getByCard(card);
+        System.out.println();
+        List list = dao.getByCard(customerget.getCcard());
+        System.out.println(customerget.getCcard());
+        System.out.println(customerget.getCpassword());
         Customer customer = null;
         if (!list.isEmpty()) {
             Iterator it = list.iterator();
             while (it.hasNext()) {
                 customer = (Customer) it.next();
             }
-            System.out.println(customer.getCpassword() + " " + password);
-            if (customer.getCpassword().equals(password)) {
+            if (customer.getCpassword().equals(customerget.getCpassword())) {
                 return LOGIN;
             }
         }
@@ -103,14 +58,14 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
         * */
         System.out.println("正在运行");
         Customer customer = new Customer();
-        customer.setCname(name);
-        customer.setCpassword(password);
-        customer.setCcard(card);
-        customer.setCsex(sex);
-        customer.setCtel(tel);
-        customer.setCage(customer.getCage());
+        customer.setCname(customerget.getCname());
+        customer.setCpassword(customerget.getCpassword());
+        customer.setCcard(customerget.getCcard());
+        customer.setCsex(customerget.getCsex());
+        customer.setCtel(customerget.getCtel());
+        customer.setCage(customerget.getCage());
         //设置生日
-        String ageStirng = card.substring(6, 14);
+        String ageStirng = customerget.getCcard().substring(6, 14);
         int year = Integer.parseInt(ageStirng.substring(0, 4));
         int month = Integer.parseInt(ageStirng.substring(4, 6));
         int day = Integer.parseInt(ageStirng.substring(6, 8));
@@ -155,11 +110,13 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction 
     public String infoUpdate() {
         //密码、地址、和电话可以修改
         Customer customer = new Customer();
-        customer.setCpassword(password);
-        customer.setCaddress(address);
-        customer.setCtel(tel);
+        customer.setCpassword(customerget.getCpassword());
+        customer.setCaddress(customerget.getCaddress());
+        customer.setCtel(customerget.getCtel());
         CustomerDao dao = new CustomerDaoImpl();
         dao.save(customer);
         return SUCCESS;
     }
+
+
 }
