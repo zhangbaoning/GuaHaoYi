@@ -5,8 +5,10 @@ import action.CustomerActionImpl;
 import dao.CustomerDao;
 import dao.CustomerDaoImpl;
 import entity.Customer;
+import entity.Doctor;
 import org.junit.Test;
 
+import javax.print.Doc;
 import java.sql.Date;
 import java.util.Iterator;
 
@@ -64,5 +66,13 @@ public class TestCustomer {
             Customer customer = (Customer) it.next();
             System.out.println(customer.toString());
         }
+    }
+
+    @Test
+    public void getDocter() {
+        CustomerDao dao = new CustomerDaoImpl();
+        Customer customer = dao.get(18);
+        Doctor doctor = customer.getDoctor();
+        System.out.println(doctor.toString());
     }
 }

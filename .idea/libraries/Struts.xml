@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="minilib">
+  <library name="Struts">
     <CLASSES>
       <root url="file://D:/java/struts-2.5.5/minilib" />
     </CLASSES>

@@ -21,7 +21,7 @@
 
 <div class="res-banner">
     <div class="frombox">
-        <form class="from">
+        <form class="from" action="register.action" method="post">
             <table border="1">
                 <tr>
                     <th>姓名 ：</th>
@@ -29,8 +29,8 @@
                 </tr>
                 <tr>
                     <th>性别：</th>
-                    <td><input type="radio" name="csex" style="width: 15px;height: 15px;">男
-                        <input type="checkbox" style="width: 15px;height: 15px;">女
+                    <td><input type="radio" name="csex" value="男" style="width: 15px;height: 15px;">男
+                        <input type="radio" name="csex" value="女" style="width: 15px;height: 15px;">女
                     </td>
                 </tr>
                 <tr>
@@ -39,11 +39,11 @@
                 </tr>
                 <tr>
                     <th>身份证：</th>
-                    <td><input type="text" placeholder="身份证"></td>
+                    <td><input type="text" name="ccard" placeholder="身份证"></td>
                 </tr>
                 <tr>
                     <th>输入密码：</th>
-                    <td><input type="password" placeholder="密码"></td>
+                    <td><input type="password" name="cpassword" placeholder="密码"></td>
                 </tr>
                 <tr>
                     <th>确认密码：</th>

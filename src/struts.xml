@@ -8,7 +8,7 @@
     <package name="customer" namespace="/" extends="struts-default">
 
         <action name="register" class="action.CustomerActionImpl" method="register">
-            <result name="input">/Sucess.jsp</result>
+            <result name="input">login.html</result>
         </action>
         <action name="login" class="action.CustomerActionImpl" method="login">
             <result name="login">index.jsp</result>

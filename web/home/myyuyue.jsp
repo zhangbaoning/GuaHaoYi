@@ -1,4 +1,5 @@
-<%@ page import="entity.Customer" %><%--
+<%@ page import="entity.Customer" %>
+<%@ page import="entity.Doctor" %><%--
   Created by IntelliJ IDEA.
   User: zhangbaoning
   Date: 2017/4/8
@@ -20,14 +21,22 @@
     <link href="../css2/mycss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<%! Customer customer = null;
+    Doctor doctor = null;
+%>
 <div class="hmtop">
     <!--顶部导航条 -->
     <div class="am-container header">
         <ul class="message-l">
             <div class="topMessage">
                 <%
-                    Customer customer = (Customer) session.getAttribute("loginUser");
-                    out.print("欢迎" + customer.getCname() + "登录");
+                    customer = (Customer) session.getAttribute("loginUser");
+                    if (customer != null) {
+                        out.print("欢迎" + customer.getCname() + "<a href=lout>退出</a> ");
+                    } else {
+                        out.print("<a href=\"login.html\" target=\"_top\" class=\"h\">亲，请登录</a>\n" +
+                                "<a href=\"register.jsp\" target=\"_top\">免费注册</a>");
+                    }
                 %>
             </div>
         </ul>
@@ -81,7 +90,22 @@
     </div>
 </div>
 <div class="xie">
-    zijixie
+    <%
+        doctor = customer.getDoctor();
+        if (customer == null) {
+            out.print("没有登录，请先登录");
+        } else if (doctor == null) {
+            out.print("没有预约，请先预约");
+        } else {
+
+            out.println("你已经预约上<br/>");
+            out.println(doctor.getDname() + "<br/>");
+            out.println(doctor.getDsex() + "<br/>");
+            out.println(doctor.getDtel() + "<br/>");
+            out.println(doctor.getDtitle() + "<br/>");
+
+        }
+    %>
 </div>
 </body>
 </body>

@@ -8,8 +8,8 @@
           <element id="module-output" name="GuaHaoYi" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="required" />
-          <element id="library" level="project" name="minilib" />
+          <element id="library" level="project" name="HIbernate" />
+          <element id="library" level="project" name="Struts" />
         </element>
       </element>
     </root>

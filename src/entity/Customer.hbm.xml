@@ -32,7 +32,7 @@
         <property name="register">
             <column name="register" sql-type="tinyint(4)" not-null="true"/>
         </property>
-        <many-to-one name="doctor" column="cdoctor" class="entity.Doctor"/>
+        <many-to-one lazy="false" name="doctor" column="cdoctor" class="entity.Doctor"/>
 
     </class>
 </hibernate-mapping>

@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="required">
+  <library name="HIbernate">
     <CLASSES>
       <root url="file://D:/java/hibernate-release-5.2.2.Final/lib/required" />
     </CLASSES>
