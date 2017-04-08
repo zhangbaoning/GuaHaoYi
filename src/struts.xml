@@ -11,9 +11,13 @@
             <result name="input">/Sucess.jsp</result>
         </action>
         <action name="login" class="action.CustomerActionImpl" method="login">
-            <result name="login">/Sucess.jsp</result>
+            <result name="login">index.jsp</result>
             <result name="error">/index.jsp</result>
         </action>
+        <action name="lout" class="action.CustomerActionImpl" method="loginOut">
+            <result name="success">index.jsp</result>
+        </action>
+
     </package>
 
 </struts>

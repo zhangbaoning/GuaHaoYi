@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
+
   <form action="register.action" method="get">
     <%--customer.setCname(cname);--%>
     <%--customer.setCpassword(cpassword);--%>

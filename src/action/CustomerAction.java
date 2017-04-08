@@ -8,6 +8,8 @@ public interface CustomerAction {
 
     public String login();//登录
 
+    public String loginOut();//退出
+
     public String order(int did, int cid);//预约
 
     public String infoUpdate();//信息修改

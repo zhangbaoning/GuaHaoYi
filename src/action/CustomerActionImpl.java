@@ -1,5 +1,6 @@
 package action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import dao.CustomerDao;
@@ -41,10 +42,19 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction,
                 customer = (Customer) it.next();
             }
             if (customer.getCpassword().equals(customerget.getCpassword())) {
+                ActionContext context = ActionContext.getContext();
+                context.getSession().put("loginUser", customer);
                 return LOGIN;
             }
         }
         return ERROR;
+    }
+
+    @Override
+    public String loginOut() {
+        ActionContext context = ActionContext.getContext();
+        context.getSession().clear();
+        return SUCCESS;
     }
 
     @Override
@@ -100,6 +110,7 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction,
                 doctor.setDfree(free);
                 doctor.getSet().add(customer);
                 doctorDao.save(doctor);
+
                 return SUCCESS;
             }
         }

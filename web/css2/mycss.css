@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 1366px;
+    height: 800px;
+    /*background-color: #43c0ff;*/
+    background-image: url("../pic/bg.gif");
+}
+
+.biaoti h1 {
+    position: relative;
+    left: 650px;
+    top: 20px;
+    font-size: 30px;
+    /*background-color: #4aaa4a;*/
+}
+
+.frombox {
+    width: 400px;
+    height: 450px;
+    background-color: #f1f1f1;
+    position: relative;
+    left: 60px;
+    top: 15px;
+    float: left;
+    margin: 1px 10px;
+}
+
+.from input {
+    border: solid 1px #8dd9ed;
+    width: 200px;
+    height: 30px;
+    text-align: left;
+    padding-left: 0;
+    margin-top: 2px;
+}
+
+.from table {
+    position: relative;
+    top: 30px;
+    left: 40px;
+    font-size: 20px;
+    border: solid 1px red;
+}
+
+.but {
+    width: auto;
+    height: auto;
+    position: relative;
+    top: 50px;;
+    left: 50px;
+}
+
+.but input {
+    text-align: center;
+    font-size: 25px;
+    width: 300px;
+    height: 50px;
+    background-color: #43c0ff;
+    border-radius: 5px;
+}
+
+.left {
+    width: 245px;
+    height: 700px;
+    float: left;
+    margin-left: 55px;
+    background-color: #8dd9ed;
+}
+
+.right {
+    width: 800px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.6);
+    /*background-color: white;*/
+    float: left;
+    margin: 60px 0 0 60px;
+}
+
+.jright {
+    width: 840px;
+    height: 720px;
+    background-image: url("../pic/papbg1.jpg");
+    float: left;
+    margin: 0 0 0 60px;
+}
+
+.jright p {
+    font-family: 微软雅黑, serif;
+    font-size: 15px;
+}
+
+summary {
+    font-size: 20px;
+    font-family: 微软雅黑, serif;
+}
+
+summary img {
+    width: 32px;
+    height: 32px;
+}
+
+table tr td {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.inner {
+    width: 220px;
+    height: 280px;
+    /*background-color: #4aaa4a;*/
+    margin: 10px auto;
+}
+
+.inner h1 {
+    margin: 0 30px;
+}
+
+.qq {
+    width: 77px;
+    height: 22px;
+    background-image: url("../pic/qqs.png");
+    position: relative;
+    left: 10px;
+    top: 80px;
+}
