@@ -1,5 +1,8 @@
 package entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by zhangbaoning on 2017/3/31.
  */
@@ -8,6 +11,15 @@ public class Hospital {
     private String hname;
     private String haddress;
     private String htel;
+    private Set depart_id = new HashSet();
+
+    public Set getDepart_id() {
+        return depart_id;
+    }
+
+    public void setDepart_id(Set depart_id) {
+        this.depart_id = depart_id;
+    }
 
     public int getHid() {
         return hid;

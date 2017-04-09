@@ -17,5 +17,4 @@ public interface DoctorDao {
 
     Doctor get(int cid);
 
-    List getByCard(String dname);
 }

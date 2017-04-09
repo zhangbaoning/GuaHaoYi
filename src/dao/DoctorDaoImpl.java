@@ -4,8 +4,10 @@ import entity.Customer;
 import entity.Doctor;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Created by zhangbaoning on 2017/3/31.
@@ -47,8 +49,5 @@ public class DoctorDaoImpl implements DoctorDao {
         return doctor;
     }
 
-    @Override
-    public List getByCard(String dname) {
-        return null;
-    }
+
 }

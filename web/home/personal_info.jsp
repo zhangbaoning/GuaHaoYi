@@ -20,6 +20,9 @@
     <link href="../css2/mycss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<!--
+TODO 添加年龄
+-->
 <%! Customer customer = null;%>
 <div class="hmtop">
     <!--顶部导航条 -->
@@ -81,7 +84,7 @@
             <ul>
                 <li class="index"><a href="index.jsp">首页</a></li>
                 <li class="qc"><a href="jkzsk.html">健康知识库</a></li>
-                <li class="qc"><a href="yuyuegh.html">预约挂号</a></li>
+                <li class="qc"><a href="order.jsp">预约挂号</a></li>
                 <li class="qc"><a href="myyuyue.jsp">我的预约</a></li>
                 <li class="qc last"><a href="liuyan.html">留言板</a></li>
             </ul>

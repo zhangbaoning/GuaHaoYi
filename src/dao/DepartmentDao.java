@@ -16,4 +16,6 @@ public interface DepartmentDao {
 
     Department get(int cid);
 
+    //使用医院名和部门名查出医生的集合
+    Department getByHnameAndPname(String hname, String pname);
 }

@@ -1,15 +1,14 @@
-<%@ page import="entity.Customer" %>
-<%@ page import="entity.Doctor" %><%--
+<%@ page import="entity.Customer" %><%--
   Created by IntelliJ IDEA.
   User: zhangbaoning
-  Date: 2017/4/8
-  Time: 11:32
+  Date: 2017/4/9
+  Time: 12:26
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>我的预约</title>
+    <title>预约挂号</title>
     <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css"/>
     <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css"/>
 
@@ -21,32 +20,31 @@
     <link href="../css2/mycss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<%! Customer customer = null;
-    Doctor doctor = null;
-%>
 <div class="hmtop">
     <!--顶部导航条 -->
     <div class="am-container header">
         <ul class="message-l">
             <div class="topMessage">
-                <%
-                    customer = (Customer) session.getAttribute("loginUser");
-                    if (customer != null) {
-                        out.print("欢迎" + customer.getCname() + "<a href=lout>退出</a> ");
-                    } else {
-                        out.print("<a href=\"login.html\" target=\"_top\" class=\"h\">亲，请登录</a>\n" +
-                                "<a href=\"register.jsp\" target=\"_top\">免费注册</a>");
-                    }
-                %>
+                <div class="menu-hd">
+                    <%
+                        Customer customer = (Customer) session.getAttribute("loginUser");
+                        if (customer != null) {
+                            out.print("欢迎" + customer.getCname() + "<a href=lout>退出</a> ");
+                        } else {
+                            out.print("<a href=\"login.html\" target=\"_top\" class=\"h\">亲，请登录</a>\n" +
+                                    "<a href=\"register.jsp\" target=\"_top\">免费注册</a>");
+                        }
+                    %>
+                </div>
             </div>
         </ul>
         <ul class="message-r">
             <div class="topMessage home">
-                <div class="menu-hd"><a href="index.jsp" target="_top" class="h">首页</a></div>
+                <div class="menu-hd"><a href="#" target="_top" class="h">首页</a></div>
             </div>
             <div class="topMessage my-shangcheng">
-                <div class="menu-hd MyShangcheng"><a href="myyuyue.jsp1" target="_top"><i
-                        class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+                <div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a>
+                </div>
             </div>
 
             <div class="topMessage favorite">
@@ -89,24 +87,51 @@
         </div>
     </div>
 </div>
-<div class="xie">
-    <%
-        doctor = customer.getDoctor();
-        if (customer == null) {
-            out.print("没有登录，请先登录");
-        } else if (doctor == null) {
-            out.print("没有预约，请先预约");
-        } else {
+<div class="box">
+    <div class="biaoti">
+        <h1>亲请选择</h1>
+    </div>
+    <div class="left">
+        <div class="inner">
+            <img src="../pic/kefu0.jpg">
+            <h1>点击咨询客服</h1>
+        </div>
+        <div class="inner">
+            <img src="../pic/kefu1.jpg">
+            <h1>健康的生活方式</h1>
+        </div>
+        <div class="qq">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">
+                <img src="../pic/qqs.png">
+            </a>
+        </div>
+    </div>
+    <div class="right">
+        <div class="table">
 
-            out.println("你已经预约上<br/>");
-            out.println(doctor.getDname() + "<br/>");
-            out.println(doctor.getDsex() + "<br/>");
-            out.println(doctor.getDtel() + "<br/>");
-            out.println(doctor.getDtitle() + "<br/>");
-
-        }
-    %>
+        </div>
+    </div>
 </div>
-</body>
+<div class="footer ">
+    <div class="footer-hd ">
+        <p>
+            <a href="# ">AKU科技</a>
+            <b>|</b>
+            <a href="index.jsp">首页</a>
+            <b>|</b>
+            <a href="# ">支付宝</a>
+
+        </p>
+    </div>
+    <div class="footer-bd ">
+        <p>
+            <a href="# ">关于我们</a>
+            <a href="# ">合作伙伴</a>
+            <a href="# ">联系我们</a>
+            <a href="# ">网站地图</a>
+            <em>© 2015-2025 Aku.edu 版权所有</em>
+        </p>
+    </div>
+</div>
 </body>
 </html>

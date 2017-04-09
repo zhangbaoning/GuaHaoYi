@@ -11,6 +11,15 @@ public class Department {
     private String pname;
     private Integer phospital;
     private Set dset = new HashSet();
+    private Set hospital_id = new HashSet();
+
+    public Set getHospital_id() {
+        return hospital_id;
+    }
+
+    public void setHospital_id(Set hospital_id) {
+        this.hospital_id = hospital_id;
+    }
 
     public Set getDset() {
         return dset;

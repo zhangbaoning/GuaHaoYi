@@ -2969,7 +2969,7 @@ $(document).ready(function () {
     })
 
 
-    < !--兼容IE浏览器-- >
+    // <!-- 兼容IE浏览器-- >
     if (!document.getElementsByClassName) {
         document.getElementsByClassName = function (cls) {
             var ret = [];

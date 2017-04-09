@@ -11,6 +11,8 @@
     <title>Title</title>
 </head>
 <body>
+
+
 <form action="login.action" method="post">
     <span>身份证</span>
     <input name="ccard" type="text">

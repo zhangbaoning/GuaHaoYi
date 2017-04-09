@@ -18,5 +18,9 @@
             <key column="ddepart"></key>
             <one-to-many class="entity.Doctor"/>
         </set>
+        <set name="hospital_id" table="ph" lazy="false">
+            <key column="pid"></key>
+            <many-to-many column="hid" class="entity.Hospital"/>
+        </set>
     </class>
 </hibernate-mapping>
