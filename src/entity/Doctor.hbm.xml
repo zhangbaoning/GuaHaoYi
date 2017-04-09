@@ -27,10 +27,10 @@
             <column name="dtitle" sql-type="varchar(20)" length="20" not-null="true"/>
         </property>
         <property name="dtotal">
-            <column name="dtotal" sql-type="int(11)" not-null="true"/>
+            <column name="dtotal" sql-type="int(11)" not-null="false"/>
         </property>
         <property name="dfree">
-            <column name="dfree" sql-type="int(10)" not-null="true"/>
+            <column name="dfree" sql-type="int(10)" not-null="false"/>
         </property>
         <many-to-one name="department" column="ddepart" class="entity.Department"/>
         <set name="set" lazy="false">

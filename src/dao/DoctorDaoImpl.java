@@ -13,11 +13,12 @@ import java.util.Queue;
  * Created by zhangbaoning on 2017/3/31.
  */
 public class DoctorDaoImpl implements DoctorDao {
-    Session session = Factory.getSession().openSession();
 
 
     @Override
     public void save(Doctor doctor) {
+        Session session = Factory.getSession().openSession();
+
         Transaction transaction = session.beginTransaction();
         session.save(doctor);
         transaction.commit();
@@ -26,6 +27,8 @@ public class DoctorDaoImpl implements DoctorDao {
 
     @Override
     public void del(Doctor doctor) {
+        Session session = Factory.getSession().openSession();
+
         Transaction transaction = session.beginTransaction();
         session.delete(doctor);
         transaction.commit();
@@ -34,6 +37,8 @@ public class DoctorDaoImpl implements DoctorDao {
 
     @Override
     public void update(Doctor doctor) {
+        Session session = Factory.getSession().openSession();
+
         Transaction transaction = session.beginTransaction();
         session.update(doctor);
         transaction.commit();
@@ -42,6 +47,8 @@ public class DoctorDaoImpl implements DoctorDao {
 
     @Override
     public Doctor get(int cid) {
+        Session session = Factory.getSession().openSession();
+
         Transaction transaction = session.beginTransaction();
         Doctor doctor = session.get(Doctor.class, cid);
         transaction.commit();

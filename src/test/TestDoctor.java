@@ -1,5 +1,6 @@
 package test;
 
+import com.opensymphony.xwork2.ActionContext;
 import dao.CustomerDao;
 import dao.CustomerDaoImpl;
 import dao.DoctorDao;
@@ -20,5 +21,14 @@ public class TestDoctor {
         Customer customer = customerDao.get(3);
         doctor.getSet().add(customer);
         dao.save(doctor);
+    }
+
+    @Test
+    public void order() {
+        DoctorDao doctorDao = new DoctorDaoImpl();
+        Doctor doctor = doctorDao.get(1);
+        Customer customer = new CustomerDaoImpl().get(19);
+        doctor.getSet().add(customer);
+        doctorDao.update(doctor);
     }
 }

@@ -1,4 +1,7 @@
-<%@ page import="entity.Customer" %><%--
+<%@ page import="entity.Customer" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="entity.Doctor" %><%--
   Created by IntelliJ IDEA.
   User: zhangbaoning
   Date: 2017/4/9
@@ -106,9 +109,34 @@
             </a>
         </div>
     </div>
+
     <div class="right">
         <div class="table">
+            <table>
+                <tr>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>职位</td>
+                    <td>年龄</td>
+                    <td>剩余</td>
+                    <td>预约</td>
+                </tr>
 
+                <%
+                    Set set = (Set) session.getAttribute("docterSet");
+                    Iterator it = set.iterator();
+                    while (it.hasNext()) {
+                        out.print("<tr>");
+                        Doctor doctor = (Doctor) it.next();
+                        out.print("<td>" + doctor.getDname() + "</td><td>" + doctor.getDsex() + "</td><td>"
+                                + doctor.getDtitle() + "</td><td>" + "年龄" + "</td><td>"
+                                + doctor.getDfree() + "</td><td>"
+                                + "<a href = order_docter.action?did=" + doctor.getDid() + ">预约</a></td>");
+                        out.print("<tr>");
+
+                    }
+                %>
+            </table>
         </div>
     </div>
 </div>

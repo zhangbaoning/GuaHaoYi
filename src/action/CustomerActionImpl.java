@@ -3,16 +3,15 @@ package action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import dao.CustomerDao;
-import dao.CustomerDaoImpl;
-import dao.DoctorDao;
-import dao.DoctorDaoImpl;
+import dao.*;
 import entity.Customer;
+import entity.Department;
 import entity.Doctor;
 
 import java.sql.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -21,6 +20,34 @@ import java.util.List;
  * 从数据库中得到为customer
  */
 public class CustomerActionImpl extends ActionSupport implements CustomerAction, ModelDriven {
+    String hname;
+    String pname;
+    int did;
+
+    public int getDid() {
+        return did;
+    }
+
+    public void setDid(int did) {
+        this.did = did;
+    }
+
+    public String getHname() {
+        return hname;
+    }
+
+    public void setHname(String hname) {
+        this.hname = hname;
+    }
+
+    public String getPname() {
+        return pname;
+    }
+
+    public void setPname(String pname) {
+        this.pname = pname;
+    }
+
     private Customer customerget = new Customer();
 
     @Override
@@ -129,5 +156,27 @@ public class CustomerActionImpl extends ActionSupport implements CustomerAction,
         return SUCCESS;
     }
 
+    public String orderByHnameAndPname() {
+
+        System.out.println(pname + " " + hname);
+        DepartmentDao dao = new DepartmentDaoImpl();
+        Department department = dao.getByHnameAndPname(hname, pname);
+        Set docterSet = department.getDset();
+        ActionContext context = ActionContext.getContext();
+        context.getSession().put("docterSet", docterSet);
+        return SUCCESS;
+    }
+
+    @Override
+    public String order() {
+        System.out.println(did);
+        DoctorDao doctorDao = new DoctorDaoImpl();
+        ActionContext context = ActionContext.getContext();
+        Doctor doctor = doctorDao.get(did);
+        Customer customer = (Customer) context.getSession().get("loginUser");
+        doctor.getSet().add(customer);
+        doctorDao.update(doctor);
+        return SUCCESS;
+    }
 
 }

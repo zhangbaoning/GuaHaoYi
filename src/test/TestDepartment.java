@@ -58,4 +58,11 @@ public class TestDepartment {
         hospitalDao.update(hospital);
         departmentDao.update(department);
     }
+
+    @Test
+    public void getByHnameAndPname() {
+        DepartmentDao dao = new DepartmentDaoImpl();
+        Department department = dao.getByHnameAndPname("宝鸡市人民医院", "骨科");
+        System.out.println(department.toString());
+    }
 }

@@ -13,4 +13,8 @@ public interface CustomerAction {
     public String order(int did, int cid);//预约
 
     public String infoUpdate();//信息修改
+
+    public String orderByHnameAndPname();
+
+    public String order();
 }

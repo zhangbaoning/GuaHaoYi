@@ -17,7 +17,12 @@
         <action name="lout" class="action.CustomerActionImpl" method="loginOut">
             <result name="success">index.jsp</result>
         </action>
-
+        <action name="docterlist" class="action.CustomerActionImpl" method="orderByHnameAndPname">
+            <result name="success">/home/docter_list.jsp</result>
+        </action>
+        <action name="order_docter" class="action.CustomerActionImpl" method="order">
+            <result name="success">/home/docter_list.jsp</result>
+        </action>
     </package>
 
 </struts>

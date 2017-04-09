@@ -113,7 +113,7 @@
                 <summary><img src="../pic/favorite.png">西安市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=骨科">骨科</a></td>
                         <td>外科</td>
                         <td>儿科</td>
                         <td>五官科</td>
