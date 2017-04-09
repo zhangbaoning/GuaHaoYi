@@ -32,6 +32,7 @@
         <property name="dfree">
             <column name="dfree" sql-type="int(10)" not-null="true"/>
         </property>
+        <many-to-one name="department" column="ddepart" class="entity.Department"/>
         <set name="set" lazy="false">
             <key column="cdoctor"></key>
             <one-to-many class="entity.Customer"/>

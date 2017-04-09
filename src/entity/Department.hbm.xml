@@ -12,8 +12,11 @@
             <column name="pname" sql-type="varchar(255)" not-null="true"/>
         </property>
         <property name="phospital">
-            <column name="phospital" sql-type="int(11)" not-null="true"/>
+            <column name="phospital" sql-type="int(11)" not-null="false"/>
         </property>
-
+        <set name="dset">
+            <key column="ddepart"></key>
+            <one-to-many class="entity.Doctor"/>
+        </set>
     </class>
 </hibernate-mapping>

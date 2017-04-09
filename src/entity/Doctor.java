@@ -18,6 +18,15 @@ public class Doctor {
     private Integer dtotal;
     private Integer dfree;
     private Set set = new HashSet();
+    private Department department;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     public Set getSet() {
         return set;

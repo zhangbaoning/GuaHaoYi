@@ -10,7 +10,15 @@ public class Department {
     private int pid;
     private String pname;
     private Integer phospital;
+    private Set dset = new HashSet();
 
+    public Set getDset() {
+        return dset;
+    }
+
+    public void setDset(Set dset) {
+        this.dset = dset;
+    }
 
     public int getPid() {
         return pid;
