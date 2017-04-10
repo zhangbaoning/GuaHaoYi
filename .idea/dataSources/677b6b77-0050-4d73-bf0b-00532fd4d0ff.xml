@@ -160,7 +160,7 @@ ccard</ColNames>
       <Position>10</Position>
       <DataType>int(10)|0</DataType>
     </column>
-    <index id="50" parent="18" name="depart">
+    <index id="50" parent="18" name="FK1rq9ndjcq1vb4cls0lc2wjgsq">
       <ColNames>ddepart</ColNames>
     </index>
     <key id="51" parent="18" name="PRIMARY">
@@ -168,60 +168,66 @@ ccard</ColNames>
       <ColNames>did</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="52" parent="18" name="depart">
+    <foreign-key id="52" parent="18" name="FK1rq9ndjcq1vb4cls0lc2wjgsq">
       <ColNames>ddepart</ColNames>
       <RefSchemaName>ghy</RefSchemaName>
       <RefTableName>department</RefTableName>
       <RefColNames>pid</RefColNames>
     </foreign-key>
-    <column id="53" parent="19" name="hid">
+    <foreign-key id="53" parent="18" name="depart">
+      <ColNames>ddepart</ColNames>
+      <RefSchemaName>ghy</RefSchemaName>
+      <RefTableName>department</RefTableName>
+      <RefColNames>pid</RefColNames>
+    </foreign-key>
+    <column id="54" parent="19" name="hid">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="54" parent="19" name="hname">
+    <column id="55" parent="19" name="hname">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="55" parent="19" name="haddress">
+    <column id="56" parent="19" name="haddress">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="56" parent="19" name="htel">
+    <column id="57" parent="19" name="htel">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="57" parent="19" name="PRIMARY">
+    <key id="58" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>hid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="58" parent="20" name="pid">
+    <column id="59" parent="20" name="pid">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="59" parent="20" name="hid">
+    <column id="60" parent="20" name="hid">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="60" parent="20" name="hostpital">
-      <ColNames>hid</ColNames>
+    <index id="61" parent="20" name="FK4rhvgrdyjhe2n5paltu2fuw3e">
+      <ColNames>pid</ColNames>
     </index>
-    <key id="61" parent="20" name="PRIMARY">
+    <key id="62" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>pid
-hid</ColNames>
+      <ColNames>hid
+pid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="62" parent="20" name="partment">
+    <foreign-key id="63" parent="20" name="FK4rhvgrdyjhe2n5paltu2fuw3e">
       <ColNames>pid</ColNames>
       <RefSchemaName>ghy</RefSchemaName>
       <RefTableName>department</RefTableName>
       <RefColNames>pid</RefColNames>
     </foreign-key>
-    <foreign-key id="63" parent="20" name="hostpital">
+    <foreign-key id="64" parent="20" name="FKrtkldghvh1ekqh40a2ga6lbhn">
       <ColNames>hid</ColNames>
       <RefSchemaName>ghy</RefSchemaName>
       <RefTableName>hospital</RefTableName>
