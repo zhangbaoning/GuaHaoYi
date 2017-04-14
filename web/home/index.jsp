@@ -14,6 +14,9 @@
 
     <link href="../basic/css/demo.css" rel="stylesheet" type="text/css"/>
 
+    <link href="../basic/css/lr2.css" rel="stylesheet" type="text/css"/>
+
+
     <link href="../css/hmstyle.css" rel="stylesheet" type="text/css"/>
     <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
     <script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
@@ -29,10 +32,10 @@
                     <%
                         Customer customer = (Customer) session.getAttribute("loginUser");
                         if (customer != null) {
-                            out.print("欢迎" + customer.getCname() + "<a href=lout>退出</a> ");
+                            out.print("<span class='dl'>欢迎" + customer.getCname() + "</span><a href=lout class='zc'>退出</a> ");
                         } else {
-                            out.print("<a href=\"login.html\" target=\"_top\" class=\"h\">亲，请登录</a>\n" +
-                                    "<a href=\"register.jsp\" target=\"_top\">免费注册</a>");
+                            out.print("<a href=\"login.html\" target=\"_top\" class=\"h\" class='dl'>亲，请登录</a>\n" +
+                                    "<a href=\"register.jsp\" target=\"_top\" class='zc'>免费注册</a>");
                         }
                     %>
 
@@ -84,10 +87,10 @@
         <div class="nav-cont">
             <ul>
                 <li class="index"><a href="index.jsp">首页</a></li>
-                <li class="qc"><a href="jkzsk.html">健康知识库</a></li>
+                <li class="qc"><a href="jkzsk.jsp">健康知识库</a></li>
                 <li class="qc"><a href="order.jsp">预约挂号</a></li>
                 <li class="qc"><a href="myyuyue.jsp">我的预约</a></li>
-                <li class="qc last"><a href="liuyan.html">留言板</a></li>
+
             </ul>
 
         </div>
@@ -115,7 +118,7 @@
                             <li>
                                 <div class="category-info">
                                     <h3 class="category-name b-category-name">
-                                        <a class="ml-22" title="皮肤科">内科
+                                        <a class="ml-22" title="皮肤科">骨科
                                         </a></h3>
                                     <em>&gt;</em></div>
                                 <div class="menu-item menu-in top">
@@ -124,17 +127,37 @@
                                             <div class="menu-srot">
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
-                                                        <dt><span title="内科">内科</span></dt>
-                                                        <dd><a title="内科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="内科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="内科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="内科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="内科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="内科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="内科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="内科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="内科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="内科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dt><span title="内科">骨科</span></dt>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=骨科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=骨科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=骨科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=骨科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=骨科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=骨科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=骨科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=宝鸡市人民医院&pname=骨科"><span>宝鸡市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=商洛市人民医院&pname=骨科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=骨科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -156,16 +179,36 @@
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
                                                         <dt><span title="外科">外科</span></dt>
-                                                        <dd><a title="外科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="外科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="外科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="外科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="外科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="外科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="外科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="外科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="外科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="外科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=外科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=外科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=外科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=外科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=外科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=外科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=外科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=宝鸡市人民医院&pname=外科"><span>宝鸡市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=商洛市人民医院&pname=外科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=外科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -187,16 +230,36 @@
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
                                                         <dt><span title="儿科">儿科</span></dt>
-                                                        <dd><a title="儿科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="儿科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="儿科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="儿科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="儿科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="儿科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="儿科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="儿科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="儿科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="儿科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=儿科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=儿科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=儿科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=儿科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=儿科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=儿科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=儿科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=宝鸡市人民医院&pname=儿科"><span>宝鸡市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=商洛市人民医院&pname=儿科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=儿科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -218,16 +281,36 @@
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
                                                         <dt><span title="五官科">五官科</span></dt>
-                                                        <dd><a title="五官科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="五官科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="五官科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="五官科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="五官科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="五官科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="五官科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="五官科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="五官科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="五官科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=五官科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=五官科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=五官科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=五官科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=五官科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=五官科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=五官科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=宝鸡市人民医院&pname=五官科"><span>宝鸡市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=商洛市人民医院&pname=五官科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=五官科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -249,16 +332,34 @@
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
                                                         <dt><span title="肿瘤科">肿瘤科</span></dt>
-                                                        <dd><a title="肿瘤科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="肿瘤科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="肿瘤科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="肿瘤科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="肿瘤科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="肿瘤科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="肿瘤科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="肿瘤科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="肿瘤科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="肿瘤科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=肿瘤科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=肿瘤科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=肿瘤科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=肿瘤科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=肿瘤科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=肿瘤科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=肿瘤科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科" href="docterlist.action?hname=宝鸡市人民医院&pname=肿瘤科><span>宝鸡市人民医院</span></a></dd>
+                                                        <dd><a title=" 内科"
+                                                            href="docterlist.action?hname=商洛市人民医院&pname=肿瘤科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=肿瘤科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -280,16 +381,36 @@
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
                                                         <dt><span title="传染科">传染科</span></dt>
-                                                        <dd><a title="传染科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="传染科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="传染科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="传染科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="传染科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="传染科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="传染科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="传染科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="传染科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="传染科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=传染科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=传染科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=传染科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=传染科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=传染科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=传染科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=传染科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=宝鸡市人民医院&pname=传染科"><span>宝鸡市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=商洛市人民医院&pname=传染科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=传染科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -311,16 +432,36 @@
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
                                                         <dt><span title="皮肤科">皮肤科</span></dt>
-                                                        <dd><a title="皮肤科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="皮肤科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="皮肤科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="皮肤科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="皮肤科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="皮肤科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="皮肤科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="皮肤科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="皮肤科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="皮肤科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=皮肤科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=皮肤科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=皮肤科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=皮肤科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=皮肤科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=皮肤科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=皮肤科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=宝鸡市人民医院&pname=皮肤科"><span>宝鸡市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=商洛市人民医院&pname=皮肤科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=皮肤科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -342,16 +483,36 @@
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
                                                         <dt><span title="中医科">中医科</span></dt>
-                                                        <dd><a title="中医科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="中医科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="中医科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="中医科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="中医科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="中医科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="中医科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="中医科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="中医科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="中医科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=中医科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=中医科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=中医科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=中医科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=中医科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=中医科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=中医科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=宝鸡市人民医院&pname=中医科"><span>宝鸡市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=商洛市人民医院&pname=中医科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=中医科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -373,16 +534,36 @@
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
                                                         <dt><span title="营养科">营养科</span></dt>
-                                                        <dd><a title="营养科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="营养科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="营养科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="营养科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="营养科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="营养科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="营养科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="营养科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="营养科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="营养科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=营养科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=营养科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=营养科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=营养科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=营养科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=营养科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=营养科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=宝鸡市人民医院&pname=营养科"><span>宝鸡市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=商洛市人民医院&pname=营养科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=营养科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -404,16 +585,36 @@
                                                 <div class="sort-side">
                                                     <dl class="dl-sort">
                                                         <dt><span title="精神心理科">精神心理科</span></dt>
-                                                        <dd><a title="精神心理科" href="#"><span>西安市人民医院</span></a></dd>
-                                                        <dd><a title="精神心理科" href="#"><span>安康市人民医院</span></a></dd>
-                                                        <dd><a title="精神心理科" href="#"><span>铜川市人民医院</span></a></dd>
-                                                        <dd><a title="精神心理科" href="#"><span>咸阳市人民医院</span></a></dd>
-                                                        <dd><a title="精神心理科" href="#"><span>榆林市人民医院</span></a></dd>
-                                                        <dd><a title="精神心理科" href="#"><span>延安市人民医院</span></a></dd>
-                                                        <dd><a title="精神心理科" href="#"><span>渭南市人民医院</span></a></dd>
-                                                        <dd><a title="精神心理科" href="#"><span>宝鸡市人民医院</span></a></dd>
-                                                        <dd><a title="精神心理科" href="#"><span>商洛市人民医院</span></a></dd>
-                                                        <dd><a title="精神心理科" href="#"><span>汉中市人民医院</span></a></dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=西安市人民医院&pname=精神心理科"><span>西安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=安康市人民医院&pname=精神心理科"><span>安康市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=铜川市人民医院&pname=精神心理科"><span>铜川市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=咸阳市人民医院&pname=精神心理科"><span>咸阳市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=榆林市人民医院&pname=精神心理科"><span>榆林市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=延安市人民医院&pname=精神心理科"><span>延安市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=渭南市人民医院&pname=精神心理科"><span>渭南市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=宝鸡市人民医院&pname=精神心理科"><span>宝鸡市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=商洛市人民医院&pname=精神心理科"><span>商洛市人民医院</span></a>
+                                                        </dd>
+                                                        <dd><a title="内科"
+                                                               href="docterlist.action?hname=汉中市人民医院&pname=精神心理科"><span>汉中市人民医院</span></a>
+                                                        </dd>
                                                     </dl>
                                                 </div>
                                             </div>

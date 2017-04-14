@@ -1,34 +1,36 @@
-<!DOCTYPE html >
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<%@ page import="entity.Customer" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>首页</title>
-
+    <title>预约挂号</title>
     <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css"/>
     <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css"/>
 
     <link href="../basic/css/demo.css" rel="stylesheet" type="text/css"/>
+    <link href="../basic/css/lr2.css" rel="stylesheet" type="text/css"/>
+    <link href="../basic/css/fy.css" rel="stylesheet" type="text/css"/>
+
 
     <link href="../css/hmstyle.css" rel="stylesheet" type="text/css"/>
     <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
     <script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
     <link href="../css2/mycss.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 <div class="hmtop">
     <!--顶部导航条 -->
     <div class="am-container header">
         <ul class="message-l">
             <div class="topMessage">
-                <div class="menu-hd">
-                    <a href="login.html" target="_top" class="h">亲，请登录</a>
-                    <a href="register.jsp" target="_top">免费注册</a>
-                </div>
+                <%
+                    Customer customer = (Customer) session.getAttribute("loginUser");
+                    if (customer != null) {
+                        out.print("<span class='dl'>欢迎" + customer.getCname() + "</span><a class='zc' href=lout>退出</a> ");
+                    } else {
+                        out.print("<a class='dl' href=\"login.html\" target=\"_top\" class=\"h\">亲，请登录</a>\n" +
+                                "<a class='zc' href=\"register.jsp\" target=\"_top\">免费注册</a>");
+                    }
+                %>
             </div>
         </ul>
         <ul class="message-r">
@@ -72,7 +74,7 @@
         <div class="nav-cont">
             <ul>
                 <li class="index"><a href="index.jsp">首页</a></li>
-                <li class="qc"><a href="jkzsk.html">健康知识库</a></li>
+                <li class="qc"><a href="jkzsk.jsp">健康知识库</a></li>
                 <li class="qc"><a href="order.jsp">预约挂号</a></li>
                 <li class="qc"><a href="myyuyue.jsp">我的预约</a></li>
                 <li class="qc last"><a href="liuyan.html">留言板</a></li>

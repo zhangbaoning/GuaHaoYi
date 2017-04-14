@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>预约挂号</title>
@@ -13,13 +14,31 @@
     <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css"/>
 
     <link href="../basic/css/demo.css" rel="stylesheet" type="text/css"/>
-
+    <link href="../basic/css/lr2.css" rel="stylesheet" type="text/css"/>
     <link href="../css/hmstyle.css" rel="stylesheet" type="text/css"/>
     <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
     <script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
     <link href="../css2/mycss.css" rel="stylesheet" type="text/css">
+    <script>
+
+        <%
+            Object obj  = session.getAttribute("loginUser");
+            if(obj==null){
+
+        %>
+        alert("请先登录");
+        window.location.href = "login.html";
+        <%
+
+
+            }
+        %>
+    </script>
+
 </head>
 <body>
+
+
 <div class="hmtop">
     <!--顶部导航条 -->
     <div class="am-container header">
@@ -29,10 +48,10 @@
                     <%
                         Customer customer = (Customer) session.getAttribute("loginUser");
                         if (customer != null) {
-                            out.print("欢迎" + customer.getCname() + "<a href=lout>退出</a> ");
+                            out.print("<span class='dl'>欢迎" + customer.getCname() + "</span><a class='zc' href=lout>退出</a> ");
                         } else {
-                            out.print("<a href=\"login.html\" target=\"_top\" class=\"h\">亲，请登录</a>\n" +
-                                    "<a href=\"register.jsp\" target=\"_top\">免费注册</a>");
+                            out.print("<a class='dl' href=\"login.html\" target=\"_top\" class=\"h\">亲，请登录</a>\n" +
+                                    "<a class='zc' href=\"register.jsp\" target=\"_top\">免费注册</a>");
                         }
                     %>
                 </div>
@@ -79,7 +98,7 @@
         <div class="nav-cont">
             <ul>
                 <li class="index"><a href="index.jsp">首页</a></li>
-                <li class="qc"><a href="jkzsk.html">健康知识库</a></li>
+                <li class="qc"><a href="jkzsk.jsp">健康知识库</a></li>
                 <li class="qc"><a href="order.jsp">预约挂号</a></li>
                 <li class="qc"><a href="myyuyue.jsp">我的预约</a></li>
                 <li class="qc last"><a href="liuyan.html">留言板</a></li>
@@ -114,15 +133,15 @@
                 <table>
                     <tr>
                         <td><a href="docterlist.action?hname=西安市人民医院&pname=骨科">骨科</a></td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=儿科">儿科</a></td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=西安市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>
@@ -132,16 +151,15 @@
                 <summary><img src="../pic/favorite.png">安康市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=安康市人民医院&pname=骨科">骨科</a></td>
+                        <td><a href="docterlist.action?hname=安康市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=安康市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=安康市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=安康市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=安康市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=安康市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=安康市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=安康市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>
@@ -150,16 +168,16 @@
                 <summary><img src="../pic/favorite.png">铜川市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=骨科">骨科</a></td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=儿科">儿科</a></td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=铜川市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>
@@ -168,16 +186,16 @@
                 <summary><img src="../pic/favorite.png">咸阳市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=骨科">骨科</a></td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=儿科">儿科</a></td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=咸阳市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>
@@ -186,16 +204,16 @@
                 <summary><img src="../pic/favorite.png">榆林市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=骨科">骨科</a></td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=儿科">儿科</a></td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=榆林市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>
@@ -204,16 +222,16 @@
                 <summary><img src="../pic/favorite.png">延安市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=骨科">骨科</a></td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=儿科">儿科</a></td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=延安市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>
@@ -222,16 +240,16 @@
                 <summary><img src="../pic/favorite.png">渭南市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=骨科">骨科</a></td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=儿科">儿科</a></td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=渭南市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>
@@ -240,16 +258,16 @@
                 <summary><img src="../pic/favorite.png">宝鸡市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=骨科">骨科</a></td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=儿科">儿科</a></td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=宝鸡市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>
@@ -258,16 +276,16 @@
                 <summary><img src="../pic/favorite.png">商洛市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=骨科">骨科</a></td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=儿科">儿科</a></td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=商洛市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>
@@ -276,16 +294,16 @@
                 <summary><img src="../pic/favorite.png">汉中市人民医院</summary>
                 <table>
                     <tr>
-                        <td>内科</td>
-                        <td>外科</td>
-                        <td>儿科</td>
-                        <td>五官科</td>
-                        <td>肿瘤科</td>
-                        <td>传染科</td>
-                        <td>皮肤科</td>
-                        <td>中医科</td>
-                        <td>精神心理科</td>
-                        <td>营养科</td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=骨科">骨科</a></td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=外科">外科</a></td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=儿科">儿科</a></td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=五官科">五官科</a></td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=肿瘤科">肿瘤科</a></td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=传染科">传染科</a></td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=皮肤科">皮肤科</a></td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=中医科">中医科</a></td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=精神心理科">精神心理科</a></td>
+                        <td><a href="docterlist.action?hname=汉中市人民医院&pname=营养科">营养科</a></td>
                     </tr>
                 </table>
             </details>

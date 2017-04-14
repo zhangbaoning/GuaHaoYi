@@ -1,5 +1,6 @@
 <%@ page import="entity.Customer" %>
-<%@ page import="entity.Doctor" %><%--
+<%@ page import="entity.Doctor" %>
+<%@ page import="ognl.ObjectArrayPool" %><%--
   Created by IntelliJ IDEA.
   User: zhangbaoning
   Date: 2017/4/8
@@ -10,17 +11,39 @@
 <html>
 <head>
     <title>我的预约</title>
+    <script>
+
+        <%
+            Object obj  = session.getAttribute("loginUser");
+            if(obj==null){
+
+        %>
+        alert("请先登录");
+        window.location.href = "login.html";
+        <%
+
+
+            }
+        %>
+    </script>
     <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css"/>
     <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css"/>
 
     <link href="../basic/css/demo.css" rel="stylesheet" type="text/css"/>
 
+    <link href="../basic/css/lr.css" rel="stylesheet" type="text/css"/>
+    <link href="../basic/css/lr2.css" rel="stylesheet" type="text/css"/>
     <link href="../css/hmstyle.css" rel="stylesheet" type="text/css"/>
     <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
     <script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
     <link href="../css2/mycss.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
+<!--
+//TODO 21点56分
+传到这里用action重新查询数据库，不然预约后，依然查不到预约的值
+-->
 <%! Customer customer = null;
     Doctor doctor = null;
 %>
@@ -32,10 +55,10 @@
                 <%
                     customer = (Customer) session.getAttribute("loginUser");
                     if (customer != null) {
-                        out.print("欢迎" + customer.getCname() + "<a href=lout>退出</a> ");
+                        out.print("<span class='dl'>欢迎" + customer.getCname() + "</span><a class='zc' href=lout>退出</a> ");
                     } else {
-                        out.print("<a href=\"login.html\" target=\"_top\" class=\"h\">亲，请登录</a>\n" +
-                                "<a href=\"register.jsp\" target=\"_top\">免费注册</a>");
+                        out.print("<a class='dl' href=\"login.html\" target=\"_top\" class=\"h\">亲，请登录</a>\n" +
+                                "<a class='zc' href=\"register.jsp\" target=\"_top\">免费注册</a>");
                     }
                 %>
             </div>
@@ -81,7 +104,7 @@
         <div class="nav-cont">
             <ul>
                 <li class="index"><a href="index.jsp">首页</a></li>
-                <li class="qc"><a href="jkzsk.html">健康知识库</a></li>
+                <li class="qc"><a href="jkzsk.jsp">健康知识库</a></li>
                 <li class="qc"><a href="order.jsp">预约挂号</a></li>
                 <li class="qc"><a href="myyuyue.jsp">我的预约</a></li>
                 <li class="qc last"><a href="liuyan.html">留言板</a></li>
@@ -90,19 +113,28 @@
     </div>
 </div>
 <div class="xie">
-    <%
+    <% if (customer != null) {
         doctor = customer.getDoctor();
+    }
         if (customer == null) {
             out.print("没有登录，请先登录");
         } else if (doctor == null) {
             out.print("没有预约，请先预约");
         } else {
 
-            out.println("你已经预约上<br/>");
-            out.println(doctor.getDname() + "<br/>");
-            out.println(doctor.getDsex() + "<br/>");
-            out.println(doctor.getDtel() + "<br/>");
-            out.println(doctor.getDtitle() + "<br/>");
+            out.println("<div class='tsh'>你已经预约上</div>");
+            out.println("<div class='lr'>");
+            out.println("<div>");
+            out.println("<span>姓名</span>");
+            out.println("<span>性别</span>");
+            out.println("<span>联系方式</span>");
+            out.println("<span>级别</span>");
+            out.println("</div>");
+            out.println("<span>" + doctor.getDname() + "</span>");
+            out.println("<span>" + (doctor.getDsex() == 1 ? '男' : '女') + "</span>");
+            out.println("<span>" + doctor.getDtel() + "</span>");
+            out.println("<span>" + doctor.getDtitle() + "</span>");
+            out.println("</div>");
 
         }
     %>

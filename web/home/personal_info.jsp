@@ -83,7 +83,7 @@ TODO 添加年龄
         <div class="nav-cont">
             <ul>
                 <li class="index"><a href="index.jsp">首页</a></li>
-                <li class="qc"><a href="jkzsk.html">健康知识库</a></li>
+                <li class="qc"><a href="jkzsk.jsp">健康知识库</a></li>
                 <li class="qc"><a href="order.jsp">预约挂号</a></li>
                 <li class="qc"><a href="myyuyue.jsp">我的预约</a></li>
                 <li class="qc last"><a href="liuyan.html">留言板</a></li>

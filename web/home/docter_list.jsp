@@ -8,6 +8,9 @@
   Time: 12:26
   To change this template use File | Settings | File Templates.
 --%>
+<!--
+TODO
+-->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,12 +20,16 @@
 
     <link href="../basic/css/demo.css" rel="stylesheet" type="text/css"/>
 
+    <link href="../basic/css/fy.css" rel="stylesheet" type="text/css"/>
+
+
     <link href="../css/hmstyle.css" rel="stylesheet" type="text/css"/>
     <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
     <script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
     <link href="../css2/mycss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<%! Customer customer = null;%>
 <div class="hmtop">
     <!--顶部导航条 -->
     <div class="am-container header">
@@ -82,7 +89,7 @@
         <div class="nav-cont">
             <ul>
                 <li class="index"><a href="index.jsp">首页</a></li>
-                <li class="qc"><a href="jkzsk.html">健康知识库</a></li>
+                <li class="qc"><a href="jkzsk.jsp">健康知识库</a></li>
                 <li class="qc"><a href="order.jsp">预约挂号</a></li>
                 <li class="qc"><a href="myyuyue.jsp">我的预约</a></li>
                 <li class="qc last"><a href="liuyan.html">留言板</a></li>
@@ -92,7 +99,7 @@
 </div>
 <div class="box">
     <div class="biaoti">
-        <h1>亲请选择</h1>
+        <h1 class="jiuzheng">请选择就诊医生</h1>
     </div>
     <div class="left">
         <div class="inner">
@@ -112,7 +119,7 @@
 
     <div class="right">
         <div class="table">
-            <table>
+            <table class="fy">
                 <tr>
                     <td>姓名</td>
                     <td>性别</td>
@@ -128,10 +135,10 @@
                     while (it.hasNext()) {
                         out.print("<tr>");
                         Doctor doctor = (Doctor) it.next();
-                        out.print("<td>" + doctor.getDname() + "</td><td>" + doctor.getDsex() + "</td><td>"
+                        out.print("<td>" + doctor.getDname() + "</td><td>" + (doctor.getDsex() == 1 ? '男' : '女') + "</td><td>"
                                 + doctor.getDtitle() + "</td><td>" + "年龄" + "</td><td>"
                                 + doctor.getDfree() + "</td><td>"
-                                + "<a href = order_docter.action?did=" + doctor.getDid() + ">预约</a></td>");
+                                + "<a href = order_docter.action?did=" + doctor.getDid() + " class='yy'>预约</a></td>");
                         out.print("<tr>");
 
                     }

@@ -1008,3 +1008,7 @@ p.cart_num {
     font-size: 14px;
 }
 
+a {
+    cursor: pointer;
+}
+

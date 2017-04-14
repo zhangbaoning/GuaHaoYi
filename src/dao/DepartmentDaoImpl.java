@@ -57,7 +57,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
     @Override
     public Department getByHnameAndPname(String hname, String pname) {
         Session session = Factory.getSession().openSession();
-        String hql = "select d from Department d,Hospital  h where d.pname=:department and h.hname=:hospital";
+        String hql = "select d from Department d,Hospital  h where d.pname=:department and h.hname=:hospital and h.hid =d.phospital";
         Query query = session.createQuery(hql);
         query.setString("department", pname);
         query.setString("hospital", hname);
