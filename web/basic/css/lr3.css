@@ -1,0 +1,17 @@
+.tt {
+    text-align: center;
+    background-image: url(../../pic/bg.gif);
+}
+
+.tt form table {
+    background-color: white;
+}
+
+.tt form {
+    position: relative;
+    left: 150px;
+}
+
+.tt form table tr, .tt form table tr td {
+    border: solid 1px black;
+}

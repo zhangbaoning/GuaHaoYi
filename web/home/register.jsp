@@ -50,7 +50,7 @@
                     <td><input type="password" placeholder="确认密码"></td>
                 </tr>
             </table>
-            <div class="but"><input type="submit"></div>
+            <div class="but"><input type="submit" value="确定"></div>
 
         </form>
     </div>

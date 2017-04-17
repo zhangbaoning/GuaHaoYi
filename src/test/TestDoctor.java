@@ -1,13 +1,14 @@
 package test;
 
 import com.opensymphony.xwork2.ActionContext;
-import dao.CustomerDao;
-import dao.CustomerDaoImpl;
-import dao.DoctorDao;
-import dao.DoctorDaoImpl;
+import dao.*;
 import entity.Customer;
+import entity.Department;
 import entity.Doctor;
 import org.junit.Test;
+
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * Created by zhangbaoning on 2017/3/31.
@@ -30,5 +31,20 @@ public class TestDoctor {
         Customer customer = new CustomerDaoImpl().get(19);
         doctor.getSet().add(customer);
         doctorDao.update(doctor);
+    }
+
+    @Test
+    public void get() {
+
+        DepartmentDao dao = new DepartmentDaoImpl();
+        Department department = dao.getByHnameAndPname("宝鸡市人民医院", "骨科");
+        System.out.println(department.getPid());
+        Set set = department.getDset();
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            Doctor doctor = (Doctor) it.next();
+            System.out.println(doctor.toString());
+        }
+
     }
 }

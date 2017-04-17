@@ -13,7 +13,7 @@
     <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css"/>
 
     <link href="../basic/css/demo.css" rel="stylesheet" type="text/css"/>
-
+    <link href="../basic/css/lr3.css" rel="stylesheet" type="text/css"/>
     <link href="../css/hmstyle.css" rel="stylesheet" type="text/css"/>
     <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
     <script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
@@ -91,7 +91,7 @@ TODO 添加年龄
         </div>
     </div>
 </div>
-<div class="xie">
+<div class="tt">
 
     <form>
         <table>

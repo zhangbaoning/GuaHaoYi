@@ -18,10 +18,12 @@
     /*background-color: #4aaa4a;*/
 }
 
+
 .frombox {
     width: 400px;
     height: 450px;
     background-color: #f1f1f1;
+    /*background-color: yellow;*/
     position: relative;
     left: 60px;
     top: 15px;
@@ -43,7 +45,7 @@
     top: 30px;
     left: 40px;
     font-size: 20px;
-    border: solid 1px red;
+    /*border: solid 1px red;*/
 }
 
 .but {
