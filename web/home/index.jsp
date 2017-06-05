@@ -99,10 +99,24 @@
             <!--轮播 -->
             <div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
                 <ul class="am-slides">
-                    <li class="banner1"><a href="introduction.html"><img src="../pic/lun0.png"/></a></li>
-                    <li class="banner2"><a><img src="../pic/lun0.png"/></a></li>
-                    <li class="banner3"><a><img src="../pic/lun1.png"/></a></li>
-                    <li class="banner4"><a><img src="../images00/ad8.jpg"/></a></li>
+                    <li class="banner2"><a href="docterlist.action?hname=西安市人民医院&pname=骨科"><img class="iimg"
+                                                                                                src="imm/22.png"
+                                                                                                style="width:761px;height:320px"/></a>
+                    </li>
+                    <li class="banner3"><a href="docterlist.action?hname=西安市人民医院&pname=骨科"><img class="iimg"
+                                                                                                src="imm/23.jpg"
+                                                                                                style="width:761px;height:320px"/></a>
+                    </li>
+                    <li class="banner4"><a href="docterlist.action?hname=西安市人民医院&pname=骨科"><img class="iimg"
+                                                                                                src="imm/24.jpg"
+                                                                                                style="width:761px;height:320px"/></a>
+                    </li>
+                    <li class="banner1"><a href="docterlist.action?hname=西安市人民医院&pname=骨科"><img class="iimg"
+                                                                                                src="imm/25.jpg"
+                                                                                                style="width:761px;height:320px"/></a>
+                    </li>
+
+
                 </ul>
             </div>
             <div class="clear"></div>
@@ -696,7 +710,7 @@
 
     <div class="am-container ">
         <div class="shopTitle ">
-            <h4 class="floor-title">医学快讯</h4>
+            <h4 class="floor-title">生活快讯</h4>
             <div class="floor-subtitle">
                 <em class="am-icon-caret-left"></em>
                 <h3>身体是革命的本钱</h3></div>
@@ -706,118 +720,20 @@
     </div>
 </div>
 
-<div class="am-g am-g-fixed floodSix ">
+<div class="am-g am-g-fixed floodSix all ">
+    <div class="tts"><a href="jkzsk.jsp"><img src="imm/健康食物.jpg"></a></div>
+    <div class="tts"><img src="imm/医疗矢量图.jpg"></div>
+    <div class="tts"><img src="imm/安康医院.jpg"></div>
+    <div class="tts"><img src="imm/男女医生.jpg"></div>
+    <div class="tts"><img src="imm/3.jpg"></div>
+    <div class="tts"><img src="imm/5.jpg"></div>
+    <div class="tts"><img src="imm/8.png"></div>
 
-    <div class="am-u-sm-5 am-u-md-3 text-one list">
-        <div class="word">
-            <a class="outer" href="#"><span class="inner"><b class="text">咨询</b></span></a>
-            <a class="outer" href="#"><span class="inner"><b class="text">咨询</b></span></a>
-            <a class="outer" href="#"><span class="inner"><b class="text">咨询</b></span></a>
-            <a class="outer" href="#"><span class="inner"><b class="text">咨询</b></span></a>
-            <a class="outer" href="#"><span class="inner"><b class="text">咨询</b></span></a>
-            <a class="outer" href="#"><span class="inner"><b class="text">咨询</b></span></a>
-            <a class="outer" href="#"><span class="inner"><b class="text">咨询</b></span></a>
-            <a class="outer" href="#"><span class="inner"><b class="text">咨询</b></span></a>
-            <a class="outer" href="#"><span class="inner"><b class="text">咨询</b></span></a>
-        </div>
-        <a href="# ">
-            <img src="../pic/lun1.png"/>
-            <div class="outer-con ">
-                <div class="title ">
-                    宣传科室
-                </div>
-                <div class="sub-title ">
-                    宣传
-                </div>
-            </div>
-        </a>
-        <div class="triangle-topright"></div>
-    </div>
-
-    <div class="am-u-sm-7 am-u-md-5 am-u-lg-2 text-two big">
-
-        <div class="outer-con ">
-            <div class="title ">
-                宣传
-            </div>
-            <div class="sub-title ">
-                宣传副标题
-            </div>
-
-        </div>
-        <a href="# "><img src="../indexpic/1.jpg"/></a>
-    </div>
+    <div class="tts"><img src="imm/9.jpg"></div>
 
 
-    <div class="am-u-md-2 am-u-lg-2 text-three">
-        <div class="boxLi"></div>
-        <div class="outer-con ">
-            <div class="title ">
-                宣传标题
-            </div>
-            <div class="sub-title ">
-                副标题
-            </div>
 
-        </div>
-        <a href="# "><img src="../indexpic/2.jpeg"/></a>
-    </div>
 
-    <div class="am-u-md-2 am-u-lg-2 text-three sug">
-        <div class="boxLi"></div>
-        <div class="outer-con ">
-            <div class="title ">
-                标题
-            </div>
-            <div class="sub-title ">
-                标题
-            </div>
-
-        </div>
-        <a href="# "><img src="../indexpic/3.jpg "/></a>
-    </div>
-
-    <div class="am-u-sm-4 am-u-md-5 am-u-lg-4 text-five">
-        <div class="boxLi"></div>
-        <div class="outer-con ">
-            <div class="title ">
-                标题
-            </div>
-            <div class="sub-title ">
-                副标题
-            </div>
-
-        </div>
-        <a href="# "><img src="../indexpic/4.jpg"/></a>
-    </div>
-
-    <div class="am-u-sm-4 am-u-md-2 am-u-lg-2 text-six">
-        <div class="boxLi"></div>
-        <div class="outer-con ">
-            <div class="title ">
-                博鳌提
-            </div>
-            <div class="sub-title ">
-                副标题
-            </div>
-
-        </div>
-        <a href="# "><img src="../indexpic/5.jpg"/></a>
-    </div>
-
-    <div class="am-u-sm-4 am-u-md-2 am-u-lg-4 text-six">
-        <div class="boxLi"></div>
-        <div class="outer-con ">
-            <div class="title ">
-                BIAOTI
-            </div>
-            <div class="sub-title ">
-                XXX
-            </div>
-
-        </div>
-        <a href="# "><img src="../indexpic/6.jpg"/></a>
-    </div>
 
 </div>
 <div class="clear "></div>

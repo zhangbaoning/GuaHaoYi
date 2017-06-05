@@ -27,6 +27,15 @@ TODO
     <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
     <script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
     <link href="../css2/mycss.css" rel="stylesheet" type="text/css">
+    <script>
+
+        window.onload = function () {
+            var uu = document.getElementById("uu");
+            uu.onclick = function () {
+                alert("您已预约成功");
+            }
+        }
+    </script>
 </head>
 <body>
 <%! Customer customer = null;%>
@@ -138,7 +147,7 @@ TODO
                         out.print("<td>" + doctor.getDname() + "</td><td>" + (doctor.getDsex() == 1 ? '男' : '女') + "</td><td>"
                                 + doctor.getDtitle() + "</td><td>" + "年龄" + "</td><td>"
                                 + doctor.getDfree() + "</td><td>"
-                                + "<a href = order_docter.action?did=" + doctor.getDid() + " class='yy'>预约</a></td>");
+                                + "<a href = order_docter.action?did=" + doctor.getDid() + " class='yy' id='uu'>预约</a></td>");
                         out.print("<tr>");
 
                     }

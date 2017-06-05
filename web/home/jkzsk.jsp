@@ -96,7 +96,8 @@
             <h1>专业的医师资源</h1>
         </div>
         <div class="qq">
-            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">
+            <a target="_blank"
+               href="http://shang.qq.com/open_webaio.html?sigt=396831cc9b0e0577166bf465617eb6cda3d40797351111c3d435774db1ce540afdd5ccf37af96e1a03384ec0f27f5727&sigu=49579db890a66b50d50a7d078df24f9a98c2edac35bbf1bd9c7c2428533cbe9b3f8553e108678738&tuin=164729694">
                 <img src="../pic/qqs.png">
             </a>
         </div>
