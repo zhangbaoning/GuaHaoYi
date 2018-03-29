@@ -7,10 +7,7 @@
         <element id="directory" name="classes">
           <element id="module-output" name="GuaHaoYi" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="HIbernate" />
-          <element id="library" level="project" name="Struts" />
-        </element>
+        <element id="directory" name="lib" />
       </element>
     </root>
   </artifact>
