@@ -6,8 +6,6 @@ import entity.Doctor;
 import entity.Hospital;
 import org.junit.Test;
 
-import java.lang.annotation.Target;
-
 /**
  * Created by zhangbaoning on 2017/4/9.
  */

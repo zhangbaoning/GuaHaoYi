@@ -2,8 +2,6 @@ package dao;
 
 import entity.Department;
 
-import java.util.List;
-
 /**
  * Created by zhangbaoning on 2017/4/9.
  */

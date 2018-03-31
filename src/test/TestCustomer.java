@@ -1,14 +1,11 @@
 package test;
 
-import action.CustomerAction;
-import action.CustomerActionImpl;
 import dao.CustomerDao;
 import dao.CustomerDaoImpl;
 import entity.Customer;
 import entity.Doctor;
 import org.junit.Test;
 
-import javax.print.Doc;
 import java.sql.Date;
 import java.util.Iterator;
 

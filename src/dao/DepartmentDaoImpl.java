@@ -1,12 +1,9 @@
 package dao;
 
 import entity.Department;
-import entity.Doctor;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-
-import java.util.List;
 
 /**
  * Created by zhangbaoning on 2017/4/9.

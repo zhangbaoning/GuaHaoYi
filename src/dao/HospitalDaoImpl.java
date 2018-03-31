@@ -1,6 +1,5 @@
 package dao;
 
-import entity.Doctor;
 import entity.Hospital;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

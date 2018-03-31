@@ -12,12 +12,11 @@ public class makeDoctor {
         String[] lastname = {"向", "东", "爱", "过", "静", "咪", "欣", "龙"};
         short sex;
         String[] ditile = {"主任", "医师", "医士", "副主任"};
-        int x = 201;
         for (int c = 0; c < 100; c++) {
             String name = firstname[(int) (Math.random() * 10 % 8)]
                     + midname[(int) (Math.random() * 10 % 8)] + lastname[(int) (Math.random() * 10 % 8)];
             String tel = "13";
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 9; i++) {
                 tel += "" + ((int) (Math.random() * 10));
             }
             sex = (short) ((short) Math.random() * 10 % 2 + 1);
@@ -45,8 +44,7 @@ public class makeDoctor {
             int depart = c;
             int total = 50;
             int free = 50;
-            x++;
-            System.out.println("insert into doctor values(" + (x) + ",'" + name + "'," + sex + ",'" + card + "','" +
+            System.out.println("insert into doctor values(" + (c + 1) + ",'" + name + "'," + sex + ",'" + card + "','" +
                     ("" + year + months + days) + "','" + tel + "','" + title + "'," + depart + "," + total + "," + free + ");");
 
         }
